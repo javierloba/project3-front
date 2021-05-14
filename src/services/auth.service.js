@@ -2,29 +2,28 @@ import axios from "axios";
 
 class AuthService {
   constructor() {
-    this.auth = axios.create({
-      baseURL: "http://localhost:5000/api",
-      withCredentials: true
+    this.instance = axios.create({
+      baseURL: "http://localhost:5000/api/auth",
+      withCredentials: true,
     });
   }
 
-  signup(data) {
-    return this.auth.post("/auth/signup", data)
-  }
+  createWorker = (data) => this.instance.post("/createWorker", data);
 
-  login(data) {      
-    return this.auth.post("/auth/login", data);
-  }
+  createUser = (data) => this.instance.post("/createUser", data);
 
-  logout() {
-    return this.auth.post("/auth/logout");
-  }
+  editUser = (id, data) => this.instance.put(`/editClient/${id}`, data);
 
-  loggedin() {
-    return this.auth.get("/auth/loggedin")
-  }
+  editWorker = (id, data) => this.instance.put(`/editWorker/${id}`, data);
+
+  deleteUser = (id) => this.instance.delete(`/deleteClient/${id}`);
+
+  deleteWorker = (id) => this.instance.delete(`/delete/${id}`);
+
+  isLoggedIn = () => this.instance.get("/loggedin");
+
+  logout = () => this.instance.get("/loggedin");
 }
-
 
 const authService = new AuthService();
 
