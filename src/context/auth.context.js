@@ -52,6 +52,11 @@ class AuthProvider extends React.Component {
     }
   } 
 
+  editClient = (data) => {
+    this.editClient(data)
+    .then(response => this.setState({...this.state, user: response.data}))
+    .catch(error => console.error(error))
+  }
   
   login = (data) => {
     authService.login(data)
@@ -74,7 +79,7 @@ class AuthProvider extends React.Component {
     if (isLoading) return <p>Loading</p>;
 
     return(
-      <Provider value={{ isLoggedIn, isLoading, user, createClient, createClient, login, logout }}  >
+      <Provider value={{ isLoggedIn, isLoading, user, createClient, createClient, editClient, editWorker, login, logout }}  >
         {this.props.children}
       </Provider>
     )
@@ -90,14 +95,17 @@ const withAuth = (WrappedComponent) => {
       return(
         <Consumer>
           { (value) => {
-            const { isLoggedIn, isLoading, user, signup, login, logout } = value;
+            const {  isLoggedIn, isLoading, user, createClient, createClient, editClient, editWorker, login, logout } = value;
 
             return (
               <WrappedComponent 
                 isLoggedIn={isLoggedIn} 
                 isLoading={isLoading} 
                 user={user} 
-                signup={signup} 
+                createClient={createClient} 
+                createWorker={createWorker} 
+                editClient={editClient} 
+                editWorker={editWorker} 
                 login={login} 
                 logout={logout}
                 {...props}
