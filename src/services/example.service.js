@@ -8,7 +8,7 @@ class ExampleService {
     // this.api  is a reusable axios request base containing the base url (baseURL)
     // of the API and the Headers options ( `withCredentials: true` )
     this.api = axios.create({
-      baseURL: "http://localhost:5000/api",
+      baseURL: "http://localhost:5000/api/auth",
       withCredentials: true,
     });
   }
@@ -17,9 +17,7 @@ class ExampleService {
 
   getOne = (id) => this.api.get(`/example/${id}`);
 
-
   create = (data) => this.api.post(`/example/${id}`, data);
-
 
   deleteOne = (id) => this.api.delete(`/example/${id}`);
 
