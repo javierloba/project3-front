@@ -16,24 +16,43 @@ class AuthProvider extends React.Component {
   async componentDidMount(){
     try {
       const result = await this.authService.isLoggedIn();
-      
+      if (result) {
+        this.setState({ isLoggedIn: true, isLoading: false, user: result.data})
+      }
+    } catch(err){
+      this.setState({ isLoggedIn: false, isLoading: false, user: null})
     }
   }
 
-  componentDidMount () {
-    authService.loggedin()
-     .then((response) => this.setState({ isLoggedIn: true, user: response.data, isLoading: false }))
-     .catch((err) => this.setState({ isLoggedIn: false, user: null, isLoading: false }));
+  createWorker = async (data) => {
+    try {
+      const response = await this.authService.createWorker(data);
+      if(response){
+        this.setState({ isLoggedIn: true, user: response.data })
+      }
+    } catch (err) {
+      this.setState({ isLoggedIn: false, user: null})
+    }
+  } 
+
+  editWorker = (data) => {
+    this.editWorker(data)
+    .then(response => this.setState({...this.state, user: response.data}))
+    .catch(error => console.error(error))
   }
 
-  signup = (data) => {
-    authService.signup(data)
-      .then((response) => this.setState({ isLoggedIn: true, user: response.data }) )
-      .catch((err) => {
-        this.setState({ isLoggedIn: false, user: null });
-      })
-  }
+  createClient = async (data) => {
+    try {
+      const response = await this.authService.createClient(data);
+      if(response){
+        this.setState({ isLoggedIn: true, user: response.data })
+      }
+    } catch (err) {
+      this.setState({ isLoggedIn: false, user: null})
+    }
+  } 
 
+  
   login = (data) => {
     authService.login(data)
       .then((response) => this.setState({ isLoggedIn: true, user: response.data }))
@@ -51,12 +70,11 @@ class AuthProvider extends React.Component {
 
   render() {
     const { isLoggedIn, isLoading, user } = this.state;
-    const { signup, login, logout } = this;
 
     if (isLoading) return <p>Loading</p>;
 
     return(
-      <Provider value={{ isLoggedIn, isLoading, user, signup, login, logout }}  >
+      <Provider value={{ isLoggedIn, isLoading, user, createClient, createClient, login, logout }}  >
         {this.props.children}
       </Provider>
     )
