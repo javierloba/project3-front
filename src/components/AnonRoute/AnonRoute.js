@@ -13,7 +13,7 @@ function AnonRoute (routeProps) {
   const { exact, path } = routeProps;
 
   // If AuthProvider is still making request to check the user
-  if (isLoading) return 'Loading';
+  if (isLoading) return 'Loading testeando porque sale loading en vez de esto o el spinner';
 
   return (
     <Route

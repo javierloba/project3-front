@@ -3,10 +3,11 @@ import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 // Pages
-import Home from "./pages/Home/Home";
-import Signup from "./pages/Signup/Signup";
+import HomeUser from "./pages/HomeUser/HomeUser";
+import HomeAdmin from "./pages/HomeAdmin/HomeAdmin";
+import HomeWorker from "./pages/HomeWorker/HomeWorker";
 import Login from "./pages/Login/Login";
-import Private from "./pages/Private/Private";
+// import Private from "./pages/Private/Private";
 
 
 // Components
@@ -19,20 +20,20 @@ class App extends Component {
     return (
       <div className="container">
         <Switch>
-          <PrivateRoute path="/" />
-          <PrivateRoute exact path="/home-client"
-          component_client={Home}
-          component_admin={Home_admin}
-          component_worker={Home_worker} />
+          <PrivateRoute path="/" component_login={Login}/>
+          <PrivateRoute exact path="/home-user"
+          component_user={HomeUser}
+          component_admin={HomeAdmin}
+          component_worker={HomeWorker} />
           <PrivateRoute exact path="/home-admin"
-          component_client={Home}
-          component_admin={Home_admin}
-          component_worker={Home_worker} />
+          component_user={HomeUser}
+          component_admin={HomeAdmin}
+          component_worker={HomeWorker} />
           <PrivateRoute exact path="/home-worker"
-          component_client={Home}
-          component_admin={Home_admin}
-          component_worker={Home_worker} />
-          <AnonRoute exact path="/login" component={Login} />
+          component_user={HomeUser}
+          component_admin={HomeAdmin}
+          component_worker={HomeWorker} />
+          {/*<AnonRoute exact path="/login" component={Login} />*/}
 
         </Switch>
       </div>
