@@ -23,7 +23,7 @@ function PrivateRoute (routeProps) {
         function(props) {
           if (! isLoggedIn) return <Redirect to="/login" />;
           else if (isLoggedIn && user.role === "admin") return <ComponentToShow {...props} />
-          else if
+          else if (isLoggedIn && user.role === "worker") return <ComponentToShow {...props} />
         }
       }
      />
