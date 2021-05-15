@@ -22,8 +22,8 @@ class AuthService {
 
   isLoggedIn = () => this.instance.get("/loggedin");
 
-  login = (data) => this.instance.post('/login');
-  
+  login = (data) => this.instance.post('/login', data);
+
   logout = () => this.instance.get("/logout");
 }
 

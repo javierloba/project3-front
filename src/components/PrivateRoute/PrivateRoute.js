@@ -6,7 +6,7 @@ import { withAuth } from './../../context/auth.context';
 
 function PrivateRoute (routeProps) {
   // Value coming from `AuthProvider` ( via `withAuth` )
-  const { isLoggedIn, isLoading, user } = routeProps;
+  const { isLoggedIn, isLoading, user, worker } = routeProps;
 
   // Values coming from the PrivateRoute itself
   const ComponentToShow = routeProps.component;
@@ -21,12 +21,13 @@ function PrivateRoute (routeProps) {
       path={path}
       render={
         function(props) {
-          if (! isLoggedIn) return <Redirect to="/login" />;
-          else if (isLoggedIn && user.role === "admin") return <ComponentToShow {...props} />
-          else if (isLoggedIn && user.role === "worker") return <ComponentToShow {...props} />
+          if (!isLoggedIn) return <Redirect to="/login" />
+          else if (isLoggedIn && user) return <ComponentToShow {...props} />
+          else if (isLoggedIn && worker.role === "admin") return <ComponentToShow {...props} />
+          else if (isLoggedIn && worker.role === "worker") return <ComponentToShow {...props} />
         }
       }
-     />
+    />
     )
 }
 
