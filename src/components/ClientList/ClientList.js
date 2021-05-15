@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import PrivateService from "../../services/private.service";
-import WorkerItem from "../WorkerItem/WorkerItem";
+import ClientItem from "../ClientItem/ClientItem";
 
-export default class WorkerList extends Component {
+export default class ClientList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      workers: [],
+      clients: [],
     };
     this.privateService = new PrivateService();
   }
@@ -15,7 +15,7 @@ export default class WorkerList extends Component {
     this.privateService
       .showWorkers()
       .then((response) => {
-        this.setState({ workers: response.data });
+        this.setState({ clients: response.data });
       })
       .catch((err) => console.error(err));
   }
@@ -24,15 +24,14 @@ export default class WorkerList extends Component {
     this.refreshState();
   }
 
-  
   displayWorkers() {
-    const { workers } = this.state;
-    return workers.map((worker) => {
+    const { clients } = this.state;
+    return clients.map((client) => {
       return (
-        <WorkerItem
+        <ClientItem
           refreshState={() => this.refreshState()}
-          key={worker.id}
-          {...worker}
+          key={client.id}
+          {...client}
         />
       );
     });

@@ -5,6 +5,7 @@ const { Consumer, Provider } = React.createContext();
 
 class PrivateProvider extends React.Component {
     state = {
+        
         isLoading: true,
         user: null
 

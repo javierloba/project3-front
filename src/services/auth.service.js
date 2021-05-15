@@ -24,12 +24,10 @@ class AuthService {
 
   login = (data) => this.instance.post('/login');
   
-  logout = () => this.instance.get("/loggedin");
+  logout = () => this.instance.get("/logout");
 }
 
-const authService = new AuthService();
-
-export default authService;
+export default AuthService;
 
 // Service is a set of methods abstracted and placed into a class, out of which we create one instance.
 // In the above case, all axios request calls are abstracted into methods.
