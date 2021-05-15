@@ -33,7 +33,5 @@ class PrivateService {
   showReserveDetail = (id) => this.instance.get(`/reserve/${id}`);
 }
 
-const PrivateService = new PrivateService();
-
 export default PrivateService;
 

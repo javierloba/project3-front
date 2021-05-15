@@ -35,10 +35,10 @@ const validators = {
     }
     return message;
   },
-  birthday: (value) => {
+  role: (value) => {
     let message;
     if (!value) {
-      message = "Birthday is required";
+      message = "Role is required";
     }
     return message;
   },
@@ -51,17 +51,15 @@ const validators = {
   },
 };
 
-class CreateClient extends Component {
+class CreateWorker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      client_number: "",
       name: "",
       surname: "",
-      client_antiquity: "",
       email: "",
       password: "",
-      birthday: "",
+      role: "",
       phone_number: "",
     };
   }
@@ -133,11 +131,11 @@ class CreateClient extends Component {
           />
         </div>
         <div>
-          <label htmlFor="birthday">Birthday:</label>
+          <label htmlFor="role">Role:</label>
           <input
             type="text"
-            name="birthday"
-            value={fields.birthday}
+            name="role"
+            value={fields.role}
             onCHange={(e) => this.handleChange(e)}
           />
         </div>
@@ -150,19 +148,10 @@ class CreateClient extends Component {
             onCHange={(e) => this.handleChange(e)}
           />
         </div>
-        <div>
-          <label htmlFor="client_antiquity">Client antiquity:</label>
-          <input
-            type="text"
-            name="client_antiquity"
-            value={}
-            onCHange={(e) => this.handleChange(e)}
-          />
-        </div>
         <button type="submit">Create client</button>
       </form>
     );
   }
 }
 
-export default withAuth(CreateClient);
+export default withAuth(CreateWorker);

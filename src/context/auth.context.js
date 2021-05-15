@@ -79,7 +79,7 @@ class AuthProvider extends React.Component {
     if (isLoading) return <p>Loading</p>;
 
     return(
-      <Provider value={{ isLoggedIn, isLoading, user, createClient, createClient, editClient, editWorker, login, logout }}  >
+      <Provider value={{ isLoggedIn, isLoading, user, createClient: this.createClient, createWorker: this.createWorker, editClient: this.editClient, editWorker: this.editWorker, login: this.login, logout: this.logout }}  >
         {this.props.children}
       </Provider>
     )
@@ -95,7 +95,7 @@ const withAuth = (WrappedComponent) => {
       return(
         <Consumer>
           { (value) => {
-            const {  isLoggedIn, isLoading, user, createClient, createClient, editClient, editWorker, login, logout } = value;
+            const {  isLoggedIn, isLoading, user, createClient, createWorker, editClient, editWorker, login, logout } = value;
 
             return (
               <WrappedComponent 
