@@ -19,10 +19,21 @@ class App extends Component {
     return (
       <div className="container">
         <Switch>
-          <PrivateRoute exact path="/" />
+          <PrivateRoute path="/" />
+          <PrivateRoute exact path="/home-client"
+          component_client={Home}
+          component_admin={Home_admin}
+          component_worker={Home_worker} />
+          <PrivateRoute exact path="/home-admin"
+          component_client={Home}
+          component_admin={Home_admin}
+          component_worker={Home_worker} />
+          <PrivateRoute exact path="/home-worker"
+          component_client={Home}
+          component_admin={Home_admin}
+          component_worker={Home_worker} />
           <AnonRoute exact path="/login" component={Login} />
 
-          <PrivateRoute exact path="/home" component={Home} />
         </Switch>
       </div>
     );
