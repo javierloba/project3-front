@@ -1,5 +1,6 @@
 import React from 'react';
 import authService from '../services/auth.service';
+import Spinner from '../components/General/Spinner/Spinner'
 
 const { Consumer, Provider } = React.createContext();
 
@@ -8,8 +9,7 @@ class AuthProvider extends React.Component {
   state = {
     isLoggedIn: false,
     isLoading: true,
-    user: null,
-    worker: null
+    user: null
   }
 
   authService = new authService();
@@ -18,10 +18,10 @@ class AuthProvider extends React.Component {
     try {
       const result = await this.authService.isLoggedIn();
       if (result) {
-        this.setState({ isLoggedIn: true, isLoading: false, user: result.data, worker: result.data})
+        this.setState({ isLoggedIn: true, isLoading: false, user: result.data})
       }
     } catch(err){
-      this.setState({ isLoggedIn: false, isLoading: false, user: null, worker: null})
+      this.setState({ isLoggedIn: false, isLoading: false, user: null})
     }
   }
 
@@ -29,16 +29,16 @@ class AuthProvider extends React.Component {
     try {
       const response = await this.authService.createWorker(data);
       if(response){
-        this.setState({ isLoggedIn: true, user: response.data, worker: response.data })
+        this.setState({ isLoggedIn: true, user: response.data})
       }
     } catch (err) {
-      this.setState({ isLoggedIn: false, user: null, worker: null})
+      this.setState({ isLoggedIn: false, user: null})
     }
-  } 
+  }
 
   editWorker = (data) => {
     this.editWorker(data)
-    .then(response => this.setState({...this.state, user: response.data, worker: response.data }))
+    .then(response => this.setState({...this.state, user: response.data}))
     .catch(error => console.error(error))
   }
 
@@ -46,41 +46,41 @@ class AuthProvider extends React.Component {
     try {
       const response = await this.authService.createClient(data);
       if(response){
-        this.setState({ isLoggedIn: true, user: response.data, worker: response.data })
+        this.setState({ isLoggedIn: true, user: response.data})
       }
     } catch (err) {
-      this.setState({ isLoggedIn: false, user: null, worker: null})
+      this.setState({ isLoggedIn: false, user: null})
     }
-  } 
+  }
 
   editClient = (data) => {
     this.editClient(data)
-    .then(response => this.setState({...this.state, user: response.data, worker: response.data }))
+    .then(response => this.setState({...this.state, user: response.data}))
     .catch(error => console.error(error))
   }
-  
+
   login = (data) => {
     authService.login(data)
-      .then((response) => this.setState({ isLoggedIn: true, user: response.data, worker: response.data }))
+      .then((response) => this.setState({ isLoggedIn: true, user: response.data}))
       .catch((err) => {
-        this.setState({ isLoggedIn: false, user: null, worker: null });
+        this.setState({ isLoggedIn: false, user: null });
       })
   }
 
   logout = () => {
     authService.logout()
-      .then(() => this.setState({ isLoggedIn: false, user: null, worker: null }))
+      .then(() => this.setState({ isLoggedIn: false, user: null }))
       .catch((err) => console.log(err));
   }
 
 
   render() {
-    const { isLoggedIn, isLoading, user, worker } = this.state;
+    const { isLoggedIn, isLoading, user } = this.state;
 
-    if (isLoading) return <p>Loading</p>;
+    if (isLoading) return <Spinner />;
 
     return(
-      <Provider value={{ isLoggedIn, isLoading, user, worker, createClient: this.createClient, createWorker: this.createWorker, editClient: this.editClient, editWorker: this.editWorker, login: this.login, logout: this.logout }}  >
+      <Provider value={{ isLoggedIn, isLoading, user, createClient: this.createClient, createWorker: this.createWorker, editClient: this.editClient, editWorker: this.editWorker, login: this.login, logout: this.logout }}  >
         {this.props.children}
       </Provider>
     )
@@ -96,14 +96,13 @@ const withAuth = (WrappedComponent) => {
       return(
         <Consumer>
           { (value) => {
-            const {  isLoggedIn, isLoading, user, worker, createClient, createWorker, editClient, editWorker, login, logout } = value;
+            const {  isLoggedIn, isLoading, user, createClient, createWorker, editClient, editWorker, login, logout } = value;
 
             return (
               <WrappedComponent
                 isLoggedIn={isLoggedIn}
                 isLoading={isLoading}
                 user={user}
-                worker={worker}
                 createClient={createClient}
                 createWorker={createWorker}
                 editClient={editClient}

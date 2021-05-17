@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PublicService from "../../services/public.service";
+import PublicService from "../../../services/public.service";
 import ServiceItem from "../ServiceItem/ServiceItem";
 
 export default class ServiceList extends Component {

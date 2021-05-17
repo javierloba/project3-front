@@ -11,9 +11,8 @@ import Login from "./pages/Login/Login";
 
 
 // Components
-import Navbar from "./components/Navbar/Navbar";
-import AnonRoute from "./components/AnonRoute/AnonRoute";
-import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+// import AnonRoute from "./components/Routes/AnonRoute/AnonRoute";
+import PrivateRoute from "./components/Routes/PrivateRoute/PrivateRoute";
 
 class App extends Component {
   render() {
@@ -21,15 +20,15 @@ class App extends Component {
       <div className="container">
         <Switch>
           <PrivateRoute path="/" component_login={Login}/>
-          <PrivateRoute exact path="/home-user"
+          <PrivateRoute exact path="/user/home"
           component_user={HomeUser}
           component_admin={HomeAdmin}
           component_worker={HomeWorker} />
-          <PrivateRoute exact path="/home-admin"
+          <PrivateRoute exact path="/admin/home"
           component_user={HomeUser}
           component_admin={HomeAdmin}
           component_worker={HomeWorker} />
-          <PrivateRoute exact path="/home-worker"
+          <PrivateRoute exact path="/worker/home"
           component_user={HomeUser}
           component_admin={HomeAdmin}
           component_worker={HomeWorker} />

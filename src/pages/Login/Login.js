@@ -26,12 +26,12 @@ class Login extends Component {
         <form onSubmit={this.handleFormSubmit}>
 
           <label>Email:</label>
-          <input type="text" name="email" value={email} onChange={this.handleChange}/>
+          <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" name="email" value={email} onChange={this.handleChange}/>
 
           <label>Password:</label>
-          <input type="password" name="password" value={password} onChange={this.handleChange} />
+          <input className="form-control" id="floatingPassword" placeholder="Password" type="password" name="password" value={password} onChange={this.handleChange} />
 
-          <input type="submit" value="Login" />
+          <button className="w-100 btn btn-lg btn-primary" type="submit" value="Login">Login</button>
         </form>
       </div>
     );
