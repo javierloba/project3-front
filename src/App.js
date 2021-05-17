@@ -4,15 +4,11 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { withAuth } from './context/auth.context';
 
 // Pages
-import HomeUser from "./pages/HomeUser/HomeUser";
-import HomeAdmin from "./pages/HomeAdmin/HomeAdmin";
-import HomeWorker from "./pages/HomeWorker/HomeWorker";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-// import Private from "./pages/Private/Private";
 
 
 // Components
-// import AnonRoute from "./components/Routes/AnonRoute/AnonRoute";
 import PrivateRoute from "./components/Routes/PrivateRoute/PrivateRoute";
 
 class App extends Component {
@@ -20,19 +16,9 @@ class App extends Component {
     return (
       <div className="container">
         <Switch>
-          <PrivateRoute path="/" component_login={Login} component_user={HomeUser}/>
+          <PrivateRoute path="/" component_login={Login} component_user={Home}/>
           <PrivateRoute exact path="/user/home"
-          component_user={HomeUser} />
-          {/*<PrivateRoute exact path="/admin/home"
-          component_user={HomeUser}
-          component_admin={HomeAdmin}
-          component_worker={HomeWorker} />
-          <PrivateRoute exact path="/worker/home"
-          component_user={HomeUser}
-          component_admin={HomeAdmin}
-          component_worker={HomeWorker} />
-          <AnonRoute exact path="/login" component={Login} />*/}
-
+          component_user={Home} />
         </Switch>
       </div>
     );

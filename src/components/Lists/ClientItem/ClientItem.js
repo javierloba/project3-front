@@ -1,6 +1,7 @@
 import React from 'react'
+import { withAuth } from '../../../context/auth.context'
 
-export default function ClientItem({name, surname, email, phone_number, client_antiquity, birthday}) {
+function ClientItem({name, surname, email, phone_number, client_antiquity, birthday}) {
 
     
     return (
@@ -14,3 +15,5 @@ export default function ClientItem({name, surname, email, phone_number, client_a
         </div>
     )
 }
+
+export default withAuth(ClientItem);
