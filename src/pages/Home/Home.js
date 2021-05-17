@@ -7,6 +7,7 @@ import { withReserve } from '../../context/reserve.context'
 import ClientItem from '../../components/Lists/ClientItem/ClientItem'
 import ClientList from '../../components/Lists/ClientList/ClientList'
 import WorkerList from '../../components/Lists/WorkerList/WorkerList';
+import Acordion from '../../components/General/Acordion/Acordion';
 
 function Home(props) {
 
@@ -18,7 +19,7 @@ function Home(props) {
     <div>
       <h1>Home User Page</h1>
       {user ? <ClientList /> : null}
-      {role === "Admin" ? <div><ClientList /> <WorkerList /> </div> : role === "Worker" ? <p>Soy un currito</p> : null}
+      {role === "Admin" ? <div><Acordion /> </div> : role === "Worker" ? <p>Soy un currito</p> : null}
     </div>
   )
 }
