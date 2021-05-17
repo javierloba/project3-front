@@ -1,5 +1,5 @@
 import React from 'react';
-import userService from '../services/user.services';
+import userService from '../services/user.service';
 
 const { Consumer, Provider } = React.createContext();
 
@@ -13,7 +13,7 @@ class UserProvider extends React.Component {
 
     async componentDidMount(){
         try {
-            const result = await this.userService.showUser();
+            const result = await this.userService.showUsers();
             const result2 = await this.userService.showUserDetail();
             if (result) {
                 this.setState({ isLoggedIn: true, isLoading: false, userList: result.data})
@@ -26,7 +26,7 @@ class UserProvider extends React.Component {
         }
     }
 
-    showUser = async (data) => {
+    showUsers = async (data) => {
         try {
             const response = await this.showUser(data);
             if(response) {
@@ -74,7 +74,7 @@ class UserProvider extends React.Component {
         const { userDetail, userList } = this.state;
 
         return(
-        <Provider value={{ userDetail, userList, showUser: this.showUser, showUserDetail: this.showUserDetail, editUser: this.editUser, deleteUser: this.deleteUser }}  >
+        <Provider value={{ userDetail, userList, showUsers: this.showUsers, showUserDetail: this.showUserDetail, editUser: this.editUser, deleteUser: this.deleteUser }}  >
             {this.props.children}
         </Provider>
         )
@@ -87,13 +87,13 @@ const withUser = (WrappedComponent) => {
         return(
         <Consumer>
             { (value) => {
-            const {  userDetail, userList, showUser, showUserDetail, editUser, deleteUser } = value;
+            const {  userDetail, userList, showUsers, showUserDetail, editUser, deleteUser } = value;
 
             return (
                 <WrappedComponent
                     userDetail={userDetail}
                     userList={userList}
-                    showUser={showUser}
+                    showUsers={showUsers}
                     showUserDetail={showUserDetail}
                     editUser={editUser}
                     deleteUser={deleteUser}
