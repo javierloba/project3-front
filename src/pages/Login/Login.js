@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from '../../context/auth.context';
+import { withUser } from '../../context/user.context';
 
 class Login extends Component {
   state = { email: "", password: "" };
@@ -38,4 +39,4 @@ class Login extends Component {
   }
 }
 
-export default withAuth(Login);
+export default withAuth(withUser(Login));

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch } from "react-router-dom";
 import { withAuth } from './context/auth.context';
 
 // Pages

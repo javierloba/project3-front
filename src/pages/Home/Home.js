@@ -1,5 +1,6 @@
 import React from 'react';
 import { withAuth } from '../../context/auth.context';
+import { withUser } from '../../context/user.context';
 import ClientItem from '../../components/Lists/ClientItem/ClientItem'
 
 function Home(props) {
@@ -17,4 +18,4 @@ function Home(props) {
   )
 }
 
-export default withAuth(Home);
+export default withAuth(withUser(Home));

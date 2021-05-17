@@ -1,9 +1,9 @@
-import React from 'react'
-import { withAuth } from '../../../context/auth.context'
+import React from 'react';
+import { withAuth } from '../../../context/auth.context';
+import { withUser } from '../../../context/user.context';
 
 function ClientItem({name, surname, email, phone_number, client_antiquity, birthday}) {
 
-    
     return (
         <div>
             <p>{name}</p>
@@ -16,4 +16,4 @@ function ClientItem({name, surname, email, phone_number, client_antiquity, birth
     )
 }
 
-export default withAuth(ClientItem);
+export default withAuth(withUser(ClientItem));

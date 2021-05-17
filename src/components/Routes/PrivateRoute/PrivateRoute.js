@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Spinner from '../../General/Spinner/Spinner';
 import { withAuth } from '../../../context/auth.context';
 
