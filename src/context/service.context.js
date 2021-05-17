@@ -7,7 +7,6 @@ class ServiceProvider extends React.Component {
     state = {
         serviceDetail: {},
         serviceList: [],
-        service: null
     }
 
     serviceService = new serviceService();
@@ -15,13 +14,13 @@ class ServiceProvider extends React.Component {
     async componentDidMount(){
         try {
             const result = await this.serviceService.showServices();
-            const result2 = await this.serviceService.showServiceDetail();
+           // const result2 = await this.serviceService.showServiceDetail();
             if (result) {
-                this.setState({ isLoggedIn: true, isLoading: false, serviceList: result.data})
+                this.setState({serviceList: result.data})
             }
-            if (result2) {
-                this.setState({ isLoggedIn: true, isLoading: false, serviceDetail: result.data})
-            }
+            // if (result2) {
+            //     this.setState({ isLoggedIn: true, isLoading: false, serviceDetail: result.data})
+            // }
         } catch(err){
             this.setState({ isLoggedIn: false, isLoading: false, service: null})
         }

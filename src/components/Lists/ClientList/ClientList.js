@@ -16,7 +16,6 @@ class ClientList extends Component {
       return this.props.userList.map((user) => {
         return (
           <ClientItem
-            refreshState={() => this.refreshState()}
             key={user.id}
             {...user}
           />
@@ -28,7 +27,6 @@ class ClientList extends Component {
   }
   
   render() {
-    console.log("comprovacion", this.props);
     return <div>{this.displayClients()}</div>;
   }
 }
