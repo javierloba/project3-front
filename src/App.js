@@ -16,6 +16,9 @@ import WorkerList from "./components/Lists/WorkerList/WorkerList";
 import CreateClient from "./pages/CreateClient/CreateClient";
 import CreateWorker from "./pages/CreateWorker/createWorker";
 import createService from "./pages/CreateService/CreateService";
+import EditClient from "./components/EditClient/EditClient";
+import EditWorker from "./components/editWorker/editWorker";
+import EditService from "./components/EditService/EditService";
 // import AnonRoute from "./components/Routes/AnonRoute/AnonRoute";
 
 class App extends Component {
@@ -31,6 +34,9 @@ class App extends Component {
           <PrivateRoute exact path="/home/admin/crearCliente" component_user={CreateClient}/>
           <PrivateRoute exact path="/home/admin/crearTrabajador" component_user={CreateWorker}/>
           <PrivateRoute exact path="/home/admin/crearServicio" component_user={createService}/>
+          <PrivateRoute exact path="/home/user/editarCliente" component_user={EditClient}/>
+          <PrivateRoute exact path="/home/worker/editarTrabajador" component_user={EditWorker}/>
+          <PrivateRoute exact path="/home/admin/editarServicio" component_user={EditService} />
         </Switch>
       </div>
     );

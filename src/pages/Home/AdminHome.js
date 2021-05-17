@@ -19,6 +19,7 @@ function AdminHome() {
       <Link to="/home/admin/crearCliente">Crear Cliente</Link>
       <Link to="/home/admin/crearTrabajador">Crear Trabajador</Link>
       <Link to="/home/admin/crearServicio">Crear Servicio</Link>
+      <Link to="/home/admin/editarServicio">Editar Servicio</Link>
     </div>
   );
 }
