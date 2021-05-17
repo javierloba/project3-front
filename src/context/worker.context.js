@@ -14,13 +14,13 @@ class WorkerProvider extends React.Component {
     async componentDidMount(){
         try {
             const result = await this.workerService.showWorkers();
-            const result2 = await this.workerService.showWorkerDetail();
+            //const result2 = await this.workerService.showWorkerDetail();
             if (result) {
-                this.setState({ isLoggedIn: true, isLoading: false, workerList: result.data})
+                this.setState({workerList: result.data})
             }
-            if (result2) {
-                this.setState({ isLoggedIn: true, isLoading: false, workerDetail: result.data})
-            }
+            // if (result2) {
+            //     this.setState({workerDetail: result.data})
+            // }
         } catch(err){
             this.setState({ isLoggedIn: false, isLoading: false, workerList: null})
         }

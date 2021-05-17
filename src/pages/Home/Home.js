@@ -6,6 +6,7 @@ import { withService } from '../../context/service.context';
 import { withReserve } from '../../context/reserve.context'
 import ClientItem from '../../components/Lists/ClientItem/ClientItem'
 import ClientList from '../../components/Lists/ClientList/ClientList'
+import WorkerList from '../../components/Lists/WorkerList/WorkerList';
 
 function Home(props) {
 
@@ -17,7 +18,7 @@ function Home(props) {
     <div>
       <h1>Home User Page</h1>
       {user ? <ClientList /> : null}
-      {role === "Admin" ? <ClientList /> : role === "Worker" ? <p>Soy un currito</p> : null}
+      {role === "Admin" ? <div><ClientList /> <WorkerList /> </div> : role === "Worker" ? <p>Soy un currito</p> : null}
     </div>
   )
 }

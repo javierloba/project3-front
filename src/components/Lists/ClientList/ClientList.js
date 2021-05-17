@@ -26,6 +26,7 @@ class ClientList extends Component {
       return null;
     }
   }
+  
   render() {
     console.log("comprovacion", this.props);
     return <div>{this.displayClients()}</div>;

@@ -20,7 +20,7 @@ class UserProvider extends React.Component {
                 this.setState({userList: result.data})
             } //else
             // if (result2) {
-            //     this.setState({ isLoggedIn: true, isLoading: false, userDetail: result.data})
+            //     this.setState({userDetail: result.data})
             // }
         } catch(err){
             this.setState({userList: null})

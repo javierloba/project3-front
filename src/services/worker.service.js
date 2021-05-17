@@ -3,7 +3,7 @@ import axios from "axios";
 class WorkerService {
     constructor() {
         this.instance = axios.create({
-            baseURL: "http://localhost:5000/api/auth",
+            baseURL: "http://localhost:5000/api/worker",
         withCredentials: true,
         });
     }
