@@ -114,6 +114,11 @@ function AdminHome() {
           </div>
         </div>
       </div>
+      <div class="buttons">
+        <a>Create Client</a>
+        <a>Create WOrker</a>
+        <a>Create a Service</a>
+      </div>
     </div>
   );
 }
