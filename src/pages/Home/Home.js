@@ -9,11 +9,6 @@ import ClientList from '../../components/Lists/ClientList/ClientList'
 import WorkerList from '../../components/Lists/WorkerList/WorkerList';
 
 function Home(props) {
-
-
-  let user = props.user.birthday;
-  let role = props.user.role;
-
   return (
     <div>
       <h1>Home User Page</h1>
