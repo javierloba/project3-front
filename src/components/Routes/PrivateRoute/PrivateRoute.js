@@ -5,7 +5,7 @@ import { withAuth } from '../../../context/auth.context';
 
 // Route that forbids access to a user who is not logged in
 
-function PrivateRoute ({ isLoggedIn, isLoading, user, exact, path, component_user, component_admin, component_worker, component_login }) {
+function PrivateRoute ({ isLoggedIn, isLoading, user, exact, path, component_user, component_login }) {
   // Value coming from `AuthProvider` ( via `withAuth` )
 
   // Values coming from the PrivateRoute itself
@@ -23,8 +23,8 @@ function PrivateRoute ({ isLoggedIn, isLoading, user, exact, path, component_use
       path={path}
       render={
         function(props) {
-          if (!isLoggedIn) return <ComponentForLogin {...props} />
-          else if (isLoggedIn && user) return <ComponentForUser {...props} />
+          if (!isLoggedIn) return <ComponentForLogin {...props}/>
+          else if (isLoggedIn) return <ComponentForUser />
           // else if (isLoggedIn && worker.role === "admin") return <ComponentForAdmin {...props} />
           // else if (isLoggedIn && worker.role === "worker") return <ComponentForWorker {...props} />
         }

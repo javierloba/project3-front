@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { withAuth } from './context/auth.context';
 
 // Pages
 import HomeUser from "./pages/HomeUser/HomeUser";
@@ -19,12 +20,10 @@ class App extends Component {
     return (
       <div className="container">
         <Switch>
-          <PrivateRoute path="/" component_login={Login}/>
+          <PrivateRoute path="/" component_login={Login} component_user={HomeUser}/>
           <PrivateRoute exact path="/user/home"
-          component_user={HomeUser}
-          component_admin={HomeAdmin}
-          component_worker={HomeWorker} />
-          <PrivateRoute exact path="/admin/home"
+          component_user={HomeUser} />
+          {/*<PrivateRoute exact path="/admin/home"
           component_user={HomeUser}
           component_admin={HomeAdmin}
           component_worker={HomeWorker} />
@@ -32,7 +31,7 @@ class App extends Component {
           component_user={HomeUser}
           component_admin={HomeAdmin}
           component_worker={HomeWorker} />
-          {/*<AnonRoute exact path="/login" component={Login} />*/}
+          <AnonRoute exact path="/login" component={Login} />*/}
 
         </Switch>
       </div>
@@ -40,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuth(App);

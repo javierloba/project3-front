@@ -17,6 +17,7 @@ class AuthProvider extends React.Component {
   async componentDidMount(){
     try {
       const result = await this.authService.isLoggedIn();
+      console.log(result)
       if (result) {
         this.setState({ isLoggedIn: true, isLoading: false, user: result.data})
       }
@@ -60,7 +61,7 @@ class AuthProvider extends React.Component {
   }
 
   login = (data) => {
-    authService.login(data)
+    this.authService.login(data)
       .then((response) => this.setState({ isLoggedIn: true, user: response.data}))
       .catch((err) => {
         this.setState({ isLoggedIn: false, user: null });
@@ -68,7 +69,7 @@ class AuthProvider extends React.Component {
   }
 
   logout = () => {
-    authService.logout()
+    this.authService.logout()
       .then(() => this.setState({ isLoggedIn: false, user: null }))
       .catch((err) => console.log(err));
   }
