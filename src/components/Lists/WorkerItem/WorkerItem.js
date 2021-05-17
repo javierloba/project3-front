@@ -7,6 +7,7 @@ function WorkerItem({name, surname, email, phone_number}) {
     
     return (
         <div>
+        <h1>Worker profile</h1>
             <p>{name}</p>
             <p>{surname}</p>
             <p>{email}</p>

@@ -9,12 +9,16 @@ import { withUser } from '../../context/user.context';
 import { withWorker } from '../../context/worker.context';
 import { withService } from '../../context/service.context';
 import { withReserve } from '../../context/reserve.context'
+import { Link } from 'react-router-dom';
 
 function AdminHome() {
   return (
     <div>
       <h1>Home de admin</h1>
       <HomeAdminAccordion />
+      <Link to="/home/admin/crearCliente">Crear Cliente</Link>
+      <Link to="/home/admin/crearTrabajador">Crear Trabajador</Link>
+      <Link to="/home/admin/crearServicio">Crear Servicio</Link>
     </div>
   );
 }

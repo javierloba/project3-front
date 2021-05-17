@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ServiceList from '../../Lists/ServiceList/ServiceList';
 
 export default function Acordion() {
     return (
@@ -37,7 +36,7 @@ export default function Acordion() {
                 data-bs-parent="#accordionFlushExample">
                     <div className="accordion-body">
                         <ul>
-                            <li><p>Hola</p></li>
+                        <Link to="/home/admin/listaClientes">Lista</Link>
                         </ul>
                     </div>
                 </div>
@@ -54,7 +53,7 @@ export default function Acordion() {
                 data-bs-parent="#accordionFlushExample">
                     <div className="accordion-body">
                         <ul>
-                            <li><p>Hola</p></li>
+                        <Link to="/home/admin/listaTrabajadores">Lista</Link>
                         </ul>
                     </div>
                 </div>

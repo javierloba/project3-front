@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { withAuth } from "../../context/auth.context";
+import { withService } from "../../context/service.context";
 
 const validators = {
   name: (value) => {
@@ -30,16 +32,26 @@ const validators = {
   },
 };
 
-export default class CreateService extends Component {
+class CreateService extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      image: "",
-      duration: "",
-      description: "",
-      price: "",
-      worker_id: "",
+      fields: {
+        name: "",
+        image: "",
+        duration: "",
+        description: "",
+        price: "",
+        worker_id: "",
+      },
+      errors: {
+        name: null,
+        image: null,
+        duration: null,
+        description: null,
+        price: null,
+        worker_id: null,
+      },
     };
   }
 
@@ -118,10 +130,10 @@ export default class CreateService extends Component {
             onCHange={(e) => this.handleChange(e)}
           />
         </div>
-        <button type="submit">Create client</button>
+        <button type="submit">Create Service</button>
       </form>
     );
   }
 }
 
-//por acabar
+export default withAuth(withService(CreateService));

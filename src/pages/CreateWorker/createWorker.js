@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import { withAuth } from "../../context/auth.context";
+import { withWorker } from "../../context/worker.context";
 const EMAIL_PATTERN =
   /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
-import React, { Component } from "react";
 
 const validators = {
   name: (value) => {
@@ -55,12 +55,22 @@ class CreateWorker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
-      surname: "",
-      email: "",
-      password: "",
-      role: "",
-      phone_number: "",
+      fields: {
+        name: "",
+        surname: "",
+        email: "",
+        password: "",
+        role: "",
+        phone_number: "",
+      },
+      errors: {
+        name: null,
+        surname: null,
+        email: null,
+        password: null,
+        role: null,
+        phone_number: null,
+      },
     };
   }
 
@@ -154,4 +164,4 @@ class CreateWorker extends Component {
   }
 }
 
-export default withAuth(CreateWorker);
+export default withAuth(withWorker(CreateWorker));

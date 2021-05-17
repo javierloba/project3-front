@@ -6,6 +6,7 @@ function ClientItem({name, surname, email, phone_number, client_antiquity, birth
 
     return (
         <div>
+        <h1>Client Profile</h1>
             <p>{name}</p>
             <p>{surname}</p>
             <p>{email}</p>
