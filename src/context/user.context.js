@@ -17,7 +17,7 @@ class UserProvider extends React.Component {
             const result2 = await this.userService.showUserDetail();
             if (result) {
                 this.setState({ isLoggedIn: true, isLoading: false, userList: result.data})
-            }
+            } else
             if (result2) {
                 this.setState({ isLoggedIn: true, isLoading: false, userDetail: result.data})
             }

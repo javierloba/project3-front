@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
-export default function ServiceItem({name, image, duration, description, price}) {
+import { withAuth } from '../../../context/auth.context';
+import { withService } from '../../../context/service.context';
+
+function ServiceItem({name, image, duration, description, price}) {
 
     return (
         <div>
@@ -12,3 +15,5 @@ export default function ServiceItem({name, image, duration, description, price})
         </div>
     )
 }
+
+export default withAuth(withService(ServiceItem));

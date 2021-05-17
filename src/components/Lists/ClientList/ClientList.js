@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import PrivateService from "../../../services/private.service";
-import ClientItem from "../ClientItem/ClientItem";
+import { withAuth } from '../../../context/auth.context';
+import { withUser } from '../../../context/user.context';
 
-export default class ClientList extends Component {
+class ClientList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,3 +40,5 @@ export default class ClientList extends Component {
     return <div>{this.displayWorkers()}</div>;
   }
 }
+
+export default withAuth(withUser(ClientList))

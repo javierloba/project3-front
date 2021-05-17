@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PublicService from "../../../services/public.service";
-import ServiceItem from "../ServiceItem/ServiceItem";
+import { withAuth } from '../../../context/auth.context';
+import { withService } from '../../../context/service.context';
 
 export default class ServiceList extends Component {
   constructor(props) {
@@ -35,3 +35,5 @@ export default class ServiceList extends Component {
     return <div>{this.displayServices()};</div>;
   }
 }
+
+export default withAuth(withService(ServiceList));

@@ -1,6 +1,8 @@
 import React from 'react'
+import { withAuth } from '../../../context/auth.context';
+import { withWorker } from '../../../context/worker.context';
 
-export default function WorkerItem({name, surname, email, phone_number}) {
+function WorkerItem({name, surname, email, phone_number}) {
 
     
     return (
@@ -12,3 +14,5 @@ export default function WorkerItem({name, surname, email, phone_number}) {
         </div>
     )
 }
+
+export default withAuth(withWorker(WorkerItem));

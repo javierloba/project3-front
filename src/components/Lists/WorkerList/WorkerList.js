@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import PrivateService from "../../../services/private.service";
-import WorkerItem from "../WorkerItem/WorkerItem";
+import { withAuth } from '../../../context/auth.context';
+import { withWorker } from '../../../context/worker.context';
 
 export default class WorkerList extends Component {
   constructor(props) {
@@ -24,7 +24,6 @@ export default class WorkerList extends Component {
     this.refreshState();
   }
 
-  
   displayWorkers() {
     const { workers } = this.state;
     return workers.map((worker) => {
@@ -41,3 +40,5 @@ export default class WorkerList extends Component {
     return <div>{this.displayWorkers()}</div>;
   }
 }
+
+export default withAuth(withWorker(WorkerList));
