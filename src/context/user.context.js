@@ -14,21 +14,22 @@ class UserProvider extends React.Component {
     async componentDidMount(){
         try {
             const result = await this.userService.showUsers();
-            const result2 = await this.userService.showUserDetail();
+            //const result2 = await this.userService.showUserDetail(id);
             if (result) {
-                this.setState({ isLoggedIn: true, isLoading: false, userList: result.data})
-            } else
-            if (result2) {
-                this.setState({ isLoggedIn: true, isLoading: false, userDetail: result.data})
-            }
+                console.log(result)
+                this.setState({userList: result.data})
+            } //else
+            // if (result2) {
+            //     this.setState({ isLoggedIn: true, isLoading: false, userDetail: result.data})
+            // }
         } catch(err){
-            this.setState({ isLoggedIn: false, isLoading: false, userList: null})
+            this.setState({userList: null})
         }
     }
 
     showUsers = async (data) => {
         try {
-            const response = await this.showUser(data);
+            const response = await this.userService.showUsers(data);
             if(response) {
                 this.setState({...this.state, userList: response.data})
             }

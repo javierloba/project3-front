@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { withAuth } from '../../../context/auth.context';
-import { withUser } from '../../../context/user.context';
+import { withAuth } from "../../../context/auth.context";
+import { withUser } from "../../../context/user.context";
+import ClientItem from "../ClientItem/ClientItem";
 
 class ClientList extends Component {
   constructor(props) {
@@ -8,37 +9,27 @@ class ClientList extends Component {
     this.state = {
       clients: [],
     };
-    this.privateService = new PrivateService();
   }
 
-  refreshState() {
-    this.privateService
-      .showWorkers()
-      .then((response) => {
-        this.setState({ clients: response.data });
-      })
-      .catch((err) => console.error(err));
-  }
-
-  componentDidMount() {
-    this.refreshState();
-  }
-
-  displayWorkers() {
-    const { clients } = this.state;
-    return clients.map((client) => {
-      return (
-        <ClientItem
-          refreshState={() => this.refreshState()}
-          key={client.id}
-          {...client}
-        />
-      );
-    });
+  displayClients() {
+    if (this.props.userList) {
+      return this.props.userList.map((user) => {
+        return (
+          <ClientItem
+            refreshState={() => this.refreshState()}
+            key={user.id}
+            {...user}
+          />
+        );
+      });
+    } else {
+      return null;
+    }
   }
   render() {
-    return <div>{this.displayWorkers()}</div>;
+    console.log("comprovacion", this.props);
+    return <div>{this.displayClients()}</div>;
   }
 }
 
-export default withAuth(withUser(ClientList))
+export default withAuth(withUser(ClientList));
