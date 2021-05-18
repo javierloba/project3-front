@@ -17,7 +17,7 @@ class ReserveProvider extends React.Component {
             const result = await this.reserveService.showReserves();
             // const result2 = await this.reserveService.showReserveDetail();
             if (result) {
-                this.setState({ isLoggedIn: true, isLoading: false, reserveList: result.data})
+                this.setState({reserveList: result.data})
             }
             // if (result2) {
             //     this.setState({ isLoggedIn: true, isLoading: false, reserveDetail: result.data})
