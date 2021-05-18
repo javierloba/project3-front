@@ -7,7 +7,7 @@ function ServiceItemAdmin({_id}) {
     return (
         <div>
             <small>
-                <Link to={`/home/service/editarServicio/${_id}`}
+                <Link to="/home/reserve/reservas"
                 className="btn btn-primary btn-sm" role="button">
                 Reservar
                 </Link>
