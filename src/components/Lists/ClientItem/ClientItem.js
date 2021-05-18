@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function ClientItem({id, name, surname, email, phone_number, client_antiquity, birthday}) {
 
+<<<<<<< HEAD
     // refreshState() {
     //     this.userService.showUsers()
     //       .then(response => {
@@ -23,6 +24,8 @@ function ClientItem({id, name, surname, email, phone_number, client_antiquity, b
     //       .catch(err => console.error(err))
     //   }
 
+=======
+>>>>>>> 79b510bd56d53793c4a127b744fd66ec8e217605
     return (
 
         <div className="list-group App">
@@ -33,7 +36,11 @@ function ClientItem({id, name, surname, email, phone_number, client_antiquity, b
             <p className="mb-1">Teléfono: {phone_number}</p>
             <small>Fecha de nacimiento: {birthday}</small>
             <small><Link to={`/home/user/editarCliente/${id}`} className="btn btn-primary btn-sm" role="button">Editar</Link></small>
+<<<<<<< HEAD
             {/*<small><button onClick={() => deleteUser()} className="btn btn-primary btn-sm" role="button">Eliminar</button></small>*/}
+=======
+           
+>>>>>>> 79b510bd56d53793c4a127b744fd66ec8e217605
         </div>
     )
 }

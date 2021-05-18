@@ -12,7 +12,7 @@ class WorkerService {
     showWorkers = () => this.instance.get("/workers");
     showWorkerDetail = (id) => this.instance.get(`/worker/${id}`);
     editWorker = (id, data) => this.instance.put(`/editWorker/${id}`, data);
-    deleteWorker = (id) => this.instance.delete(`/delete/${id}`);
+    deleteWorker = (id) => this.instance.delete(`/deleteWorker/${id}`);
 
 }
 
