@@ -10,7 +10,7 @@ class ReserveService {
 
     createReserve = (data) => this.instance.post(`/create-reserve`, data);
     showReserves = () => this.instance.get("/reserves");
-    showReserveDetail = (id) => this.instance.get(`/${id}`);
+    showReserveDetail = (id) => this.instance.get(`reserve/${id}`);
     editReserve = (id, data) => this.instance.put(`/reserve/${id}`, data);
     deleteReserve = (id) => this.instance.delete(`/reserve/${id}/delete`);
 

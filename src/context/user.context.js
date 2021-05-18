@@ -16,7 +16,6 @@ class UserProvider extends React.Component {
             const result = await this.userService.showUsers();
             //const result2 = await this.userService.showUserDetail(id);
             if (result) {
-                console.log(result)
                 this.setState({userList: result.data})
             } //else
             // if (result2) {

@@ -15,13 +15,13 @@ class ReserveProvider extends React.Component {
     async componentDidMount(){
         try {
             const result = await this.reserveService.showReserves();
-            const result2 = await this.reserveService.showReserveDetail();
+            // const result2 = await this.reserveService.showReserveDetail();
             if (result) {
                 this.setState({ isLoggedIn: true, isLoading: false, reserveList: result.data})
             }
-            if (result2) {
-                this.setState({ isLoggedIn: true, isLoading: false, reserveDetail: result.data})
-            }
+            // if (result2) {
+            //     this.setState({ isLoggedIn: true, isLoading: false, reserveDetail: result.data})
+            // }
         } catch(err){
             this.setState({ isLoggedIn: false, isLoading: false, reserve: null})
         }

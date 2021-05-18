@@ -17,7 +17,7 @@ class ServiceList extends Component {
       return this.props.serviceList.map((service) => {
         return (
           <div>
-          <Link to={`/home/admin/editarServicio/${service._id}`} className="list-group-item list-group-item-action">
+          <Link to={`/home/service/editarServicio/${service._id}`} className="list-group-item list-group-item-action">
             <ServiceItem key={service._id} {...service} />
           </Link>
           </div>

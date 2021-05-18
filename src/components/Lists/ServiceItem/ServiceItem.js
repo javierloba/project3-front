@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { withAuth } from '../../../context/auth.context';
 import { withService } from '../../../context/service.context';

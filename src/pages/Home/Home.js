@@ -1,5 +1,4 @@
 import React from "react";
-import { Route } from "react-router";
 import { withAuth } from "../../context/auth.context";
 import { withUser } from "../../context/user.context";
 import { withWorker } from "../../context/worker.context";
@@ -14,7 +13,7 @@ function Home(props) {
   let role = props.user.role;
 
   return (
-    <div>
+    <div className="App">
       {user ? <ClientHome /> : null}
       {role === "Admin" ? (
         <AdminHome />

@@ -1,7 +1,4 @@
 import React from "react";
-import ServiceList from '../../components/Lists/ServiceList/ServiceList';
-import ClientList from '../../components/Lists/ClientList/ClientList';
-import WorkerList from '../../components/Lists/WorkerList/WorkerList';
 import HomeAdminAccordion from '../../components/General/Acordion/HomeAdminAccordion';
 import WebCalendar from '../../components/General/WebCalendar/WebCalendar';
 
@@ -18,7 +15,7 @@ function AdminHome() {
       <h1>Home de admin</h1>
       <HomeAdminAccordion />
       <WebCalendar />
-      <Link to="/home/admin/editarServicio" className="btn btn-primary" role="button">Gestionar reservas</Link>
+      <Link to="/home/admin/listaReservas" className="btn btn-primary" role="button">Gestionar reservas</Link>
     </div>
   );
 }
