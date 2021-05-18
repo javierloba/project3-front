@@ -93,7 +93,7 @@ class EditService extends Component {
             type="text"
             name="name"
             value={fields.name}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -102,7 +102,7 @@ class EditService extends Component {
             type="text"
             name="image"
             value={fields.image}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -111,7 +111,7 @@ class EditService extends Component {
             type="number"
             name="duration"
             value={fields.duration}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -120,7 +120,7 @@ class EditService extends Component {
             type="text"
             name="description"
             value={fields.description}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -129,7 +129,7 @@ class EditService extends Component {
             type="number"
             name="price"
             value={fields.price}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <button type="submit">Edit Service</button>

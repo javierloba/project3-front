@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../../../context/auth.context";
 import { withWorker } from "../../../context/worker.context";
 import WorkerItem from "../WorkerItem/WorkerItem";
+import { Link } from 'react-router-dom';
 
 class WorkerList extends Component {
   constructor(props) {
@@ -15,11 +16,12 @@ class WorkerList extends Component {
     if (this.props.workerList) {
       return this.props.workerList.map((worker) => {
         return (
-          <WorkerItem
-            refreshState={() => this.refreshState()}
-            key={worker._id}
-            {...worker}
-          />
+
+          <div>
+          <Link to={`/home/worker/editarTrabajador/${worker._id}`} className="list-group-item list-group-item-action">
+            <WorkerItem key={worker._id} {...worker} />
+          </Link>
+          </div>
         );
       });
     } else {

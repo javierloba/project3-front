@@ -19,9 +19,6 @@ import createService from "./pages/CreateService/CreateService";
 import EditClient from "./components/EditClient/EditClient";
 import EditWorker from "./components/editWorker/editWorker";
 import EditService from "./components/EditService/EditService";
-import AnonRoute from "./components/Routes/AnonRoute/AnonRoute";
-
-// import AnonRoute from "./components/Routes/AnonRoute/AnonRoute";
 
 class App extends Component {
   
@@ -29,7 +26,6 @@ class App extends Component {
   render() {
     return (
     <Switch>
-          <AnonRoute exact path="/home" component={Login} />
           <PrivateRoute exact path="/" component_login={Login} component_user={Home}/>
           <PrivateRoute exact path="/home/admin/listaServicios" component_user={ServiceList} />
           <PrivateRoute exact path="/home/admin/listaClientes" component_user={ClientList} />
@@ -37,9 +33,9 @@ class App extends Component {
           <PrivateRoute exact path="/home/admin/crearCliente" component_user={CreateClient}/>
           <PrivateRoute exact path="/home/admin/crearTrabajador" component_user={CreateWorker}/>
           <PrivateRoute exact path="/home/admin/crearServicio" component_user={createService}/>
-          <PrivateRoute exact path="/home/user/editarCliente" component_user={EditClient}/>
-          <PrivateRoute exact path="/home/worker/editarTrabajador" component_user={EditWorker}/>
-          <PrivateRoute exact path="/home/admin/editarServicio" component_user={EditService} />
+          <PrivateRoute exact path="/home/user/editarCliente/:id" component_user={EditClient}/>
+          <PrivateRoute exact path="/home/worker/editarTrabajador/:id" component_user={EditWorker}/>
+          <PrivateRoute exact path="/home/admin/editarServicio/:id" component_user={EditService} />
         </Switch>
     );
   }

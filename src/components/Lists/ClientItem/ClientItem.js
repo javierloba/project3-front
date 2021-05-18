@@ -5,14 +5,14 @@ import { withUser } from '../../../context/user.context';
 function ClientItem({name, surname, email, phone_number, client_antiquity, birthday}) {
 
     return (
-        <div>
-        <h1>Client Profile</h1>
-            <p>{name}</p>
-            <p>{surname}</p>
-            <p>{email}</p>
-            <p>{phone_number}</p>
-            <p>{client_antiquity}</p>
-            <p>{birthday}</p>
+
+        <div class="list-group">
+            <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{name} {surname}</h5>
+            </div>
+            <p class="mb-1">E-mail: {email} </p>
+            <p class="mb-1">Teléfono: {phone_number}</p>
+            <small>Fecha de nacimiento: {birthday}</small>
         </div>
     )
 }
