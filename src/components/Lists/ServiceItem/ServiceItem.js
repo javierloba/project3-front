@@ -2,8 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { withAuth } from '../../../context/auth.context';
 import { withService } from '../../../context/service.context';
+import ServiceItemAdmin from '../../General/Buttons/ServiceItemAdmin/ServiceItemAdmin';
+import ServiceItemUser from '../../General/Buttons/ServiceItemUser/ServiceItemUser';
 
-function ServiceItem({name, image, duration, description, price, _id}) {
+
+function ServiceItem({name, image, duration, description, price, _id, ...props}) {
+
+
+    let user = props.user.birthday;
+    let role = props.user.role;
 
     return (
         <div className="list-group App">
@@ -13,8 +20,11 @@ function ServiceItem({name, image, duration, description, price, _id}) {
                 </div>
                 <p className="mb-1">{description}</p>
                 <small>{duration} min</small>
-                <small><Link to={`/home/service/editarServicio/${_id}`} className="btn btn-primary btn-sm" role="button">Editar</Link></small>
-                <small><Link to={`/home/service/editarServicio/${_id}`} className="btn btn-primary btn-sm" role="button">Borrar</Link></small>
+
+                <div>
+                {user ? <ServiceItemUser /> : null}
+                {role ? <ServiceItemAdmin /> : null}
+                </div>
         </div>
     )
 }
