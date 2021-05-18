@@ -88,7 +88,7 @@ class CreateClient extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createClient(this.state.fields);
+    this.props.createUser(this.state.fields);
   }
 
   handleChange(event) {
@@ -174,7 +174,7 @@ class CreateClient extends Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
-          <button type="submit">Create Worker</button>
+          <button type="submit" value="createUser">Create Client</button>
         </form>
       </div>
     );

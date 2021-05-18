@@ -8,7 +8,7 @@ class WorkerService {
         });
     }
 
-    createWorker = (data) => this.instance.post("/createWorker", data);
+    
     showWorkers = () => this.instance.get("/workers");
     showWorkerDetail = (id) => this.instance.get(`/worker/${id}`);
     editWorker = (id, data) => this.instance.put(`/editWorker/${id}`, data);
