@@ -3,7 +3,10 @@ import { withAuth } from '../../../context/auth.context';
 import { withWorker } from '../../../context/worker.context';
 import { Link } from 'react-router-dom';
 
-function WorkerItem({_id, name, surname, email, phone_number}) {
+
+function WorkerItem({_id, name, surname, email, phone_number, deleteWorker}) {
+
+
 
     return (
         <div className="list-group">
@@ -13,7 +16,7 @@ function WorkerItem({_id, name, surname, email, phone_number}) {
             <p className="mb-1">E-mail: {email} </p>
             <p className="mb-1">Teléfono: {phone_number}</p>
             <small><Link to={`/home/worker/editarTrabajador/${_id}`} className="btn btn-primary btn-sm" role="button">Editar</Link></small>
-            <small><Link to={`/home/worker/editarTrabajador/${_id}`} className="btn btn-primary btn-sm" role="button">Borrar</Link></small>
+            <small><button onClick={() => deleteWorker(_id)}>Borrar Trabajador</button></small>
         </div>
     )
 }

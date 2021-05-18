@@ -36,6 +36,7 @@ class AuthProvider extends React.Component {
       this.setState({ isLoggedIn: false, user: null})
     }
   }
+  
 
   createUser = async (data) => {
     try {
