@@ -18,7 +18,7 @@ function AdminHome() {
       <h1>Home de admin</h1>
       <HomeAdminAccordion />
       <WebCalendar />
-      <Link to="/home/admin/editarServicio">Editar Servicio</Link>
+      <Link to="/home/admin/editarServicio" className="btn btn-primary" role="button">Gestionar reservas</Link>
     </div>
   );
 }
