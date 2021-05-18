@@ -80,7 +80,7 @@ class EditService extends Component {
  async handleSubmit(event) {
     console.log("DATA", this.state.fields);
     await this.props.editService(this.props.match.params.id, this.state.fields);
-    await this.props.history.push('/');
+    await this.props.history.push("/");
   }
 
   handleChange(event) {

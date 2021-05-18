@@ -49,10 +49,11 @@ class UserProvider extends React.Component {
         }
     }
 
-    editUser = async (data) => {
+    editUser = async (id, data) => {
         try {
-            const response = await this.userService.editUser(data);
+            const response = await this.userService.editOneUser(id, data);
             if(response) {
+                console.log(response)
                 this.setState({...this.state, user: response.data})
             }
         } catch (error) {
@@ -60,9 +61,9 @@ class UserProvider extends React.Component {
         }
     }
 
-    deleteUser = async (data) => {
+    deleteUser = async (id) => {
         try {
-            const response = await this.userService.deleteUser(data);
+            const response = await this.userService.deleteUser(id);
             if(response) {
                 this.setState({...this.state, user: response.data})
             }
