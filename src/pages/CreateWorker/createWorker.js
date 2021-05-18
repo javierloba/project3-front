@@ -12,7 +12,7 @@ const validators = {
     }
     return message;
   },
-  suername: (value) => {
+  surname: (value) => {
     let message;
     if (!value) {
       message = "Surname is required";
@@ -110,7 +110,7 @@ class CreateWorker extends Component {
             type="text"
             name="name"
             value={fields.name}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -119,7 +119,7 @@ class CreateWorker extends Component {
             type="text"
             name="surname"
             value={fields.surname}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -128,7 +128,7 @@ class CreateWorker extends Component {
             type="text"
             name="email"
             value={fields.email}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -137,7 +137,7 @@ class CreateWorker extends Component {
             type="password"
             name="password"
             value={fields.password}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -146,7 +146,7 @@ class CreateWorker extends Component {
             type="text"
             name="role"
             value={fields.role}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <div>
@@ -155,7 +155,7 @@ class CreateWorker extends Component {
             type="text"
             name="phone_number"
             value={fields.phone_number}
-            onCHange={(e) => this.handleChange(e)}
+            onChange={(e) => this.handleChange(e)}
           />
         </div>
         <button type="submit">Create client</button>

@@ -12,7 +12,7 @@ const validators = {
     }
     return message;
   },
-  suername: (value) => {
+  surname: (value) => {
     let message;
     if (!value) {
       message = "Surname is required";
@@ -49,6 +49,13 @@ const validators = {
     }
     return message;
   },
+  client_antiquity: (value) => {
+    let message;
+    if (!value) {
+      message = "Surname is required";
+    }
+    return message;
+  },
 };
 
 class CreateClient extends Component {
@@ -64,6 +71,7 @@ class CreateClient extends Component {
         password: "",
         birthday: "",
         phone_number: "",
+        client_antiquity: "",
       },
       errors: {
         name: null,
@@ -73,6 +81,7 @@ class CreateClient extends Component {
         password: null,
         birthday: null,
         phone_number: null,
+        client_antiquity: null,
       },
     };
   }
@@ -108,7 +117,7 @@ class CreateClient extends Component {
               type="text"
               name="name"
               value={fields.name}
-              onCHange={(e) => this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
           <div>
@@ -117,7 +126,7 @@ class CreateClient extends Component {
               type="text"
               name="surname"
               value={fields.surname}
-              onCHange={(e) => this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
           <div>
@@ -126,7 +135,7 @@ class CreateClient extends Component {
               type="text"
               name="email"
               value={fields.email}
-              onCHange={(e) => this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
           <div>
@@ -135,7 +144,7 @@ class CreateClient extends Component {
               type="password"
               name="password"
               value={fields.password}
-              onCHange={(e) => this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
           <div>
@@ -144,7 +153,7 @@ class CreateClient extends Component {
               type="text"
               name="birthday"
               value={fields.birthday}
-              onCHange={(e) => this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
           <div>
@@ -153,7 +162,7 @@ class CreateClient extends Component {
               type="text"
               name="phone_number"
               value={fields.phone_number}
-              onCHange={(e) => this.handleChange(e)}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
           <div>
@@ -161,8 +170,8 @@ class CreateClient extends Component {
             <input
               type="text"
               name="client_antiquity"
-              value=""
-              onCHange={(e) => this.handleChange(e)}
+              value={fields.client_antiquity}
+              onChange={(e) => this.handleChange(e)}
             />
           </div>
           <button type="submit">Create Worker</button>
