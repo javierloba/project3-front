@@ -17,9 +17,7 @@ class ClientList extends Component {
       return this.props.userList.map((user) => {
         return (
           <div>
-          <Link to={`/home/user/editarCliente/${user.id}`} className="list-group-item list-group-item-action">
             <ClientItem key={user.id} {...user} />
-          </Link>
           </div>
         );
       });

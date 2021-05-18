@@ -18,9 +18,7 @@ class WorkerList extends Component {
         return (
 
           <div>
-          <Link to={`/home/worker/editarTrabajador/${worker._id}`} className="list-group-item list-group-item-action">
             <WorkerItem key={worker._id} {...worker} />
-          </Link>
           </div>
         );
       });

@@ -19,9 +19,7 @@ class ReserveList extends Component {
         return this.props.reserveList.map((reserve) => {
             return (
             <div>
-            <Link to={`/home/reserve/editarReserva/${reserve._id}`} className="list-group-item list-group-item-action">
                 <ReserveItem key={reserve._id} {...reserve} />
-            </Link>
             </div>
             );
         });
