@@ -59,19 +59,19 @@ class EditClient extends Component {
         this.props.editUser(uploadData)
     }
 
-    handleChange(event){
-        const { name, value, type, files } = event.target;
-        this.setState({
-          fields: {
-            ...this.state.fields,
-            [name]: type === 'file' ? files[0] : value
-          },
-          errors: {
-            ...this.state.errors,
-            [name]: type === 'file' ? validators[name](files[0]) : validators[name](value)
-          }
-        })
-      }
+    handleChange(event) {
+      const { name, value } = event.target;
+      this.setState({
+        fields: {
+          ...this.state.fields,
+          [name]: value,
+        },
+        errors: {
+          ...this.state.errors,
+          [name]: validators[name](value),
+        },
+      });
+    }
 
   render() {
       const { fields } = this.state;

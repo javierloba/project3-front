@@ -65,18 +65,15 @@ class EditService extends Component {
   }
 
   handleChange(event) {
-    const { name, value, type, files } = event.target;
+    const { name, value } = event.target;
     this.setState({
       fields: {
         ...this.state.fields,
-        [name]: type === "file" ? files[0] : value,
+        [name]: value,
       },
       errors: {
         ...this.state.errors,
-        [name]:
-          type === "file"
-            ? validators[name](files[0])
-            : validators[name](value),
+        [name]: validators[name](value),
       },
     });
   }
