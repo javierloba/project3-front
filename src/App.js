@@ -17,6 +17,7 @@ import ReserveList from "./components/Lists/ReserveList/ReserveList";
 import CreateClient from "./pages/CreateClient/CreateClient";
 import CreateWorker from "./pages/CreateWorker/createWorker";
 import createService from "./pages/CreateService/CreateService";
+import CreateReserve from "./pages/CreateReserve/CreateReserve"
 import EditClient from "./components/EditClient/EditClient";
 import EditWorker from "./components/editWorker/editWorker";
 import EditService from "./components/EditService/EditService";
@@ -32,9 +33,8 @@ class App extends Component {
           <PrivateRoute exact path="/home/admin/listaServicios" component_user={ServiceList} />
           <PrivateRoute exact path="/home/admin/listaClientes" component_user={ClientList} />
           <PrivateRoute exact path="/home/admin/listaTrabajadores" component_user={WorkerList} />
-
           <PrivateRoute exact path="/home/admin/listaReservas" component_user={ReserveList} />
-
+          <PrivateRoute exact path="/home/admin/crearReserva" component_user={CreateReserve} />
           <PrivateRoute exact path="/home/admin/crearCliente" component_user={CreateClient}/>
           <PrivateRoute exact path="/home/admin/crearTrabajador" component_user={CreateWorker}/>
           <PrivateRoute exact path="/home/admin/crearServicio" component_user={createService}/>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from '../../../context/auth.context';
 import { withService } from '../../../context/service.context';
 import ServiceItem from '../ServiceItem/ServiceItem';
-import { Link } from 'react-router-dom';
+
 
 class ServiceList extends Component {
   constructor(props) {
