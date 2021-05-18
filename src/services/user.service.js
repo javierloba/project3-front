@@ -9,7 +9,7 @@ class UserService {
     }
 
     showUsers = () => this.instance.get("/clients");
-    showUserDetail = (id) => this.instance.get(`/${id}`);
+    showUserDetail = (id) => this.instance.get(`/client/${id}`);
     editUser = (id, data) => this.instance.put(`/editClient/${id}`, data);
     deleteUser = (id) => this.instance.delete(`/deleteClient/${id}`);
 

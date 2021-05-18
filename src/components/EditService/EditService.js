@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter } from 'react-router'
+import { withRouter } from "react-router";
 import { withAuth } from "../../context/auth.context";
 import { withService } from "../../context/service.context";
 import serviceService from "../../services/service.service";
@@ -16,6 +16,13 @@ const validators = {
     let message;
     if (!value) {
       message = "Image is required";
+    }
+    return message;
+  },
+  description: (value) => {
+    let message;
+    if (!value) {
+      message = "Service description is required";
     }
     return message;
   },
@@ -58,24 +65,22 @@ class EditService extends Component {
     this.serviceService = new serviceService();
   }
 
-  async componentDidMount(){
-    const result = await this.serviceService.showServiceDetail(this.props.match.params.id)
-    console.log(result)
-    this.setState({ 
+  async componentDidMount() {
+    const result = await this.serviceService.showServiceDetail(
+      this.props.match.params.id
+    );
+    console.log("Servicio result", result);
+  
+    this.setState({
       ...this.state,
-      fields: result.data
-    })
+      fields: result.data,
+    });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    // const uploadData = new FormData();
-    // Object.keys(this.state.fields).forEach((key) => {
-    //   uploadData.append(key, this.state.fields[key]);
-    // });
-
-    console.log("DATA", this.state.fields)
-    this.props.editService(this.props.match.params.id, this.state.fields);
+ async handleSubmit(event) {
+    console.log("DATA", this.state.fields);
+    await this.props.editService(this.props.match.params.id, this.state.fields);
+    await this.props.history.push('/');
   }
 
   handleChange(event) {
@@ -92,13 +97,8 @@ class EditService extends Component {
     });
   }
 
-  isValid() {
-    const { errors } = this.state;
-    return !Object.keys(errors).some((key) => errors[key]);
-  }
-
   render() {
-      const { fields } = this.state;
+    const { fields } = this.state;
     return (
       <form onSubmit={(e) => this.handleSubmit(e)}>
         <div>
