@@ -63,6 +63,7 @@ class EditClient extends Component {
       fields: result.data,
     });
   }
+  
   async handleSubmit(event) {
     event.preventDefault();
     await this.props.editUser(this.props.match.params.id, this.state.fields);

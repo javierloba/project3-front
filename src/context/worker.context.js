@@ -48,9 +48,9 @@ class WorkerProvider extends React.Component {
         }
     }
 
-    editWorker = async (data) => {
+    editWorker = async (id, data) => {
         try {
-            const response = await this.workerService.editWorker(data);
+            const response = await this.workerService.editWorker(id, data);
             if(response) {
                 this.setState({...this.state, user: response.data})
             }
