@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from '../../../context/auth.context';
 import { withService } from '../../../context/service.context';
 import ServiceItem from '../ServiceItem/ServiceItem';
+import { Link } from 'react-router-dom';
 
 class ServiceList extends Component {
   constructor(props) {
@@ -15,7 +16,11 @@ class ServiceList extends Component {
     if (this.props.serviceList) {
       return this.props.serviceList.map((service) => {
         return (
-          <ServiceItem key={service.id} {...service} />
+          <div>
+          <Link to="/home/admin/editarServicio" className="list-group-item list-group-item-action">
+            <ServiceItem key={service._id} {...service} />
+          </Link>
+          </div>
         )
       })
     } else {
