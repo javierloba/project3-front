@@ -1,8 +1,9 @@
 import React from 'react';
 import { withAuth } from '../../../context/auth.context';
 import { withReserve } from '../../../context/reserve.context';
+import { Link } from 'react-router-dom';
 
-function ReserveItem({user_id, worker_id, reservation_date, status, service_id, assigned_worker}) {
+function ReserveItem({_id, user_id, worker_id, reservation_date, status, service_id, assigned_worker}) {
 
     return (
 
@@ -15,6 +16,8 @@ function ReserveItem({user_id, worker_id, reservation_date, status, service_id, 
             <small>{status}</small>
             <small>{service_id}</small>
             <small>{assigned_worker}</small>
+            <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Editar</Link></small>
+            <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Borrar</Link></small>
         </div>
     )
 }
