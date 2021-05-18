@@ -40,7 +40,7 @@ class UserProvider extends React.Component {
 
     showUserDetail = async (data) => {
         try {
-            const response = await this.showUserDetail(data);
+            const response = await this.userService.showUserDetail(data);
             if(response) {
                 this.setState({...this.state, userDetail: response.data})
             }
@@ -51,7 +51,7 @@ class UserProvider extends React.Component {
 
     editUser = async (data) => {
         try {
-            const response = await this.editUser(data);
+            const response = await this.userService.editUser(data);
             if(response) {
                 this.setState({...this.state, user: response.data})
             }
@@ -62,7 +62,7 @@ class UserProvider extends React.Component {
 
     deleteUser = async (data) => {
         try {
-            const response = await this.deleteUser(data);
+            const response = await this.userService.deleteUser(data);
             if(response) {
                 this.setState({...this.state, user: response.data})
             }

@@ -28,7 +28,7 @@ class WorkerProvider extends React.Component {
 
     showWorkers = async (data) => {
         try {
-            const response = await this.showWorkers(data);
+            const response = await this.workerService.showWorkers(data);
             if(response) {
                 this.setState({...this.state, workerList: response.data})
             }
@@ -39,7 +39,7 @@ class WorkerProvider extends React.Component {
 
     showWorkerDetail = async (data) => {
         try {
-            const response = await this.showWorkerDetail(data);
+            const response = await this.workerService.showWorkerDetail(data);
             if(response) {
                 this.setState({...this.state, workerDetail: response.data})
             }
@@ -50,7 +50,7 @@ class WorkerProvider extends React.Component {
 
     editWorker = async (data) => {
         try {
-            const response = await this.editWorker(data);
+            const response = await this.workerService.editWorker(data);
             if(response) {
                 this.setState({...this.state, user: response.data})
             }
@@ -61,7 +61,7 @@ class WorkerProvider extends React.Component {
 
     deleteWorker = async (data) => {
         try {
-            const response = await this.deleteWorker(data);
+            const response = await this.workerService.deleteWorker(data);
             if(response) {
                 this.setState({...this.state, user: response.data})
             }

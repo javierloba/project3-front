@@ -29,7 +29,7 @@ class ReserveProvider extends React.Component {
 
     createReserve = async (data) => {
       try {
-        const response = await this.createReserve(data);
+        const response = await this.reserveService.createReserve(data);
         if(response) {
           this.setState({...this.state, reserve: response.data})
         }
@@ -40,7 +40,7 @@ class ReserveProvider extends React.Component {
 
     showReserves = async () => {
         try {
-            const response = await this.showReserves();
+            const response = await this.reserveService.showReserves();
             if(response) {
                 this.setState({...this.state, reserveList: response.data})
             }
@@ -51,7 +51,7 @@ class ReserveProvider extends React.Component {
 
     showReserveDetail = async (id) => {
         try {
-            const response = await this.showReserveDetail(id);
+            const response = await this.reserveService.showReserveDetail(id);
             if(response) {
                 this.setState({...this.state, reserveDetail: response.data})
             }
@@ -62,7 +62,7 @@ class ReserveProvider extends React.Component {
 
     editReserve = async (id, data) => {
         try {
-            const response = await this.editReserve(id, data);
+            const response = await this.reserveService.editReserve(id, data);
             if(response) {
                 this.setState({...this.state, reserve: response.data})
             }
@@ -73,7 +73,7 @@ class ReserveProvider extends React.Component {
 
     deleteReserve = async (id) => {
         try {
-            const response = await this.deleteReserve(id);
+            const response = await this.reserveService.deleteReserve(id);
             if(response) {
                 this.setState({...this.state, reserve: response.data})
             }

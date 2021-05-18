@@ -28,7 +28,7 @@ class ServiceProvider extends React.Component {
 
   createService = async (data) => {
     try {
-      const response = await this.createService(data);
+      const response = await this.serviceService.createService(data);
       if (response) {
         this.setState({ ...this.state, service: response.data });
       }
@@ -39,7 +39,7 @@ class ServiceProvider extends React.Component {
 
   showServices = async () => {
     try {
-      const response = await this.showServices();
+      const response = await this.serviceService.showServices();
       if (response) {
         this.setState({ ...this.state, serviceList: response.data });
       }
@@ -75,7 +75,7 @@ class ServiceProvider extends React.Component {
 
   deleteService = async (id) => {
     try {
-      const response = await this.deleteService(id);
+      const response = await this.serviceService.deleteService(id);
       if (response) {
         this.setState({ ...this.state, user: response.data });
       }
