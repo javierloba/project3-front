@@ -9,8 +9,7 @@ class AuthProvider extends React.Component {
   state = {
     isLoggedIn: false,
     isLoading: true,
-    user: null,
-    testeo: [1, 2, 3]
+    user: null
   }
 
   authService = new authService();

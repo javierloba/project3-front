@@ -19,15 +19,18 @@ import createService from "./pages/CreateService/CreateService";
 import EditClient from "./components/EditClient/EditClient";
 import EditWorker from "./components/editWorker/editWorker";
 import EditService from "./components/EditService/EditService";
+import AnonRoute from "./components/Routes/AnonRoute/AnonRoute";
+
 // import AnonRoute from "./components/Routes/AnonRoute/AnonRoute";
 
 class App extends Component {
+  
+ 
   render() {
     return (
-      <div className="container">
-        <Switch>
+    <Switch>
+          <AnonRoute exact path="/home" component={Login} />
           <PrivateRoute exact path="/" component_login={Login} component_user={Home}/>
-          <PrivateRoute exact path="/home" component_user={Home} />
           <PrivateRoute exact path="/home/admin/listaServicios" component_user={ServiceList} />
           <PrivateRoute exact path="/home/admin/listaClientes" component_user={ClientList} />
           <PrivateRoute exact path="/home/admin/listaTrabajadores" component_user={WorkerList} />
@@ -38,7 +41,6 @@ class App extends Component {
           <PrivateRoute exact path="/home/worker/editarTrabajador" component_user={EditWorker}/>
           <PrivateRoute exact path="/home/admin/editarServicio" component_user={EditService} />
         </Switch>
-      </div>
     );
   }
 }
