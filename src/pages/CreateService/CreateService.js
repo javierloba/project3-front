@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withAuth } from "../../context/auth.context";
 import { withService } from "../../context/service.context";
+import { withRouter } from "react-router"
 
 const validators = {
   name: (value) => {
@@ -21,6 +22,13 @@ const validators = {
     let message;
     if (!value) {
       message = "Service duration is required";
+    }
+    return message;
+  },
+  description: (value) => {
+    let message;
+    if (!value) {
+      message = "Service description is required";
     }
     return message;
   },
@@ -55,11 +63,10 @@ class CreateService extends Component {
     };
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
-    if (this.isValid()) {
-      this.props.createService(this.state.fields);
-    }
+    await this.props.createService(this.state.fields);
+    await this.props.history.push("/");
   }
 
   handleChange(event) {
@@ -136,4 +143,4 @@ class CreateService extends Component {
   }
 }
 
-export default withAuth(withService(CreateService));
+export default withAuth(withService(withRouter(CreateService)));
