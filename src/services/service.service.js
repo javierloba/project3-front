@@ -10,8 +10,8 @@ class ServiceService {
 
     createService = (data) => this.instance.post(`/createService`, data);
     showServices = () => this.instance.get("/services");
-    showServiceDetail = (id) => this.instance.get(`/${id}`);
-    editService = (id, data) => this.instance.put(`/services/${id}`, data);
+    showServiceDetail = (id) => this.instance.get(`/service/${id}`);
+    editOneService = (id, data) => this.instance.put(`/services/${id}`, data);
     deleteService = (id) => this.instance.delete(`/services/${id}/delete`);
 
 }

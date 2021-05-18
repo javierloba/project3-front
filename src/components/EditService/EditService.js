@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router'
 import { withAuth } from "../../context/auth.context";
 import { withService } from "../../context/service.context";
+import serviceService from "../../services/service.service";
 
 const validators = {
   name: (value) => {
@@ -53,15 +55,27 @@ class EditService extends Component {
         worker_id: null,
       },
     };
+    this.serviceService = new serviceService();
+  }
+
+  async componentDidMount(){
+    const result = await this.serviceService.showServiceDetail(this.props.match.params.id)
+    console.log(result)
+    this.setState({ 
+      ...this.state,
+      fields: result.data
+    })
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    const uploadData = new FormData();
-    Object.keys(this.state.fields).forEach((key) => {
-      uploadData.append(key, this.state.fields[key]);
-    });
-    this.props.editService(uploadData);
+    // const uploadData = new FormData();
+    // Object.keys(this.state.fields).forEach((key) => {
+    //   uploadData.append(key, this.state.fields[key]);
+    // });
+
+    console.log("DATA", this.state.fields)
+    this.props.editService(this.props.match.params.id, this.state.fields);
   }
 
   handleChange(event) {
@@ -138,4 +152,4 @@ class EditService extends Component {
   }
 }
 
-export default withAuth(withService(EditService));
+export default withAuth(withService(withRouter(EditService)));
