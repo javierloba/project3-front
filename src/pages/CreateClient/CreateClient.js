@@ -88,6 +88,7 @@ class CreateClient extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    console.log(this.props.createUser)
     this.props.createUser(this.state.fields);
   }
 
