@@ -37,9 +37,9 @@ class AuthProvider extends React.Component {
     }
   }
 
-  createClient = async (data) => {
+  createUser = async (data) => {
     try {
-      const response = await this.authService.createClient(data);
+      const response = await this.authService.createUser(data);
       if(response){
         this.setState({ isLoggedIn: true, user: response.data})
       }
@@ -76,7 +76,7 @@ class AuthProvider extends React.Component {
     if (isLoading) return <Spinner />;
 
     return(
-      <Provider value={{ isLoggedIn, isLoading, user, createClient: this.createClient, createWorker: this.createWorker, login: this.login, logout: this.logout }}  >
+      <Provider value={{ isLoggedIn, isLoading, user, createUser: this.createUser, createWorker: this.createWorker, login: this.login, logout: this.logout }}  >
         {this.props.children}
       </Provider>
     )
@@ -92,14 +92,14 @@ const withAuth = (WrappedComponent) => {
       return(
         <Consumer>
           { (value) => {
-            const { isLoggedIn, isLoading, user, createClient, createWorker, login, logout } = value;
+            const { isLoggedIn, isLoading, user, createUser, createWorker, login, logout } = value;
 
             return (
               <WrappedComponent
                 isLoggedIn={isLoggedIn}
                 isLoading={isLoading}
                 user={user}
-                createClient={createClient}
+                createUser={createUser}
                 createWorker={createWorker}
                 login={login}
                 logout={logout}

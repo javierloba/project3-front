@@ -66,29 +66,25 @@ class CreateClient extends Component {
         client_number: "",
         name: "",
         surname: "",
-        client_antiquity: "",
         email: "",
         password: "",
         birthday: "",
         phone_number: "",
-        client_antiquity: "",
       },
       errors: {
         name: null,
         surname: null,
-        client_antiquity: null,
         email: null,
         password: null,
         birthday: null,
         phone_number: null,
-        client_antiquity: null,
       },
     };
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.props.createUser)
+    console.log(this.props.createUser);
     this.props.createUser(this.state.fields);
   }
 
@@ -175,7 +171,9 @@ class CreateClient extends Component {
               onChange={(e) => this.handleChange(e)}
             />
           </div>
-          <button type="submit" value="createUser">Create Client</button>
+          <button type="submit" value="createUser">
+            Create Client
+          </button>
         </form>
       </div>
     );

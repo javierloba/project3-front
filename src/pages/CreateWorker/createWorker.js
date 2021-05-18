@@ -76,9 +76,9 @@ class CreateWorker extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (this.isValid()) {
-      this.props.createClient(this.state.fields);
-    }
+
+      this.props.createWorker(this.state.fields);
+
   }
 
   handleChange(event) {
@@ -95,10 +95,7 @@ class CreateWorker extends Component {
     });
   }
 
-  isValid() {
-    const { errors } = this.state;
-    return !Object.keys(errors).some((key) => errors[key]);
-  }
+
 
   render() {
     const { fields } = this.state;
@@ -158,7 +155,7 @@ class CreateWorker extends Component {
             onChange={(e) => this.handleChange(e)}
           />
         </div>
-        <button type="submit">Create client</button>
+        <button type="submit" value="createWorker">Create Worker</button>
       </form>
     );
   }
