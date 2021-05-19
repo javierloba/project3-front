@@ -3,6 +3,7 @@ import { withAuth } from "../../../context/auth.context";
 import { withService } from "../../../context/service.context";
 import ServiceItem from "../ServiceItem/ServiceItem";
 import AdminNavbar from "../../../components/General/Navbar/AdminNavbar";
+import ClientNavbar from "../../../components/General/Navbar/ClientNavbar"
 
 class ServiceList extends Component {
   constructor(props) {
@@ -10,6 +11,8 @@ class ServiceList extends Component {
     this.state = {
       services: [],
     };
+    this.user = props.user.birthday;
+    this.role = props.user.role;
   }
 
   deleteService = async (serviceId) => {
@@ -37,7 +40,7 @@ class ServiceList extends Component {
   render() {
     return (
       <div>
-        <AdminNavbar />
+      {this.role === "Admin" ? <AdminNavbar/> : null}
         <div>{this.displayServices()}</div>
       </div>
     );
