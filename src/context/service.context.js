@@ -14,13 +14,9 @@ class ServiceProvider extends React.Component {
   async componentDidMount() {
     try {
       const result = await this.serviceService.showServices();
-      // const result2 = await this.serviceService.showServiceDetail();
       if (result) {
         this.setState({ serviceList: result.data });
       }
-      // if (result2) {
-      //     this.setState({ isLoggedIn: true, isLoading: false, serviceDetail: result.data})
-      // }
     } catch (err) {
       this.setState({ isLoggedIn: false, isLoading: false, service: null });
     }
@@ -75,7 +71,8 @@ class ServiceProvider extends React.Component {
 
   deleteService = async (id) => {
     try {
-      const response = await this.serviceService.deleteService(id);
+      const deletedService = await this.serviceService.deleteService(id);
+      const response = await this.serviceService.showServices();
       if (response) {
         this.setState({ ...this.state, user: response.data });
       }

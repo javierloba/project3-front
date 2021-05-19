@@ -3,7 +3,7 @@ import { withAuth } from '../../../context/auth.context';
 import { withUser } from '../../../context/user.context';
 import { Link } from 'react-router-dom';
 
-function ClientItem({id, name, surname, email, phone_number, client_antiquity, birthday, deleteUser}) {
+function ClientItem({id, name, surname, email, phone_number, birthday, deleteUser}) {
 
     return (
         <div className="list-group App">

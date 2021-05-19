@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withAuth } from "../../context/auth.context";
 import { withService } from "../../context/service.context";
-import { withRouter } from "react-router"
+import { withRouter } from "react-router";
+import AdminNavbar from "../../components/General/Navbar/AdminNavbar";
 
 const validators = {
   name: (value) => {
@@ -91,54 +92,59 @@ class CreateService extends Component {
   render() {
     const { fields } = this.state;
     return (
-      <form onSubmit={(e) => this.handleSubmit(e)}>
+      <div>
+        <AdminNavbar />
         <div>
-          <label htmlFor="name">Service name:</label>
-          <input
-            type="text"
-            name="name"
-            value={fields.name}
-            onChange={(e) => this.handleChange(e)}
-          />
+          <form onSubmit={(e) => this.handleSubmit(e)}>
+            <div>
+              <label htmlFor="name">Service name:</label>
+              <input
+                type="text"
+                name="name"
+                value={fields.name}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </div>
+            <div>
+              <label htmlFor="image">Image:</label>
+              <input
+                type="text"
+                name="image"
+                value={fields.image}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </div>
+            <div>
+              <label htmlFor="duration">Duration:</label>
+              <input
+                type="number"
+                name="duration"
+                value={fields.duration}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </div>
+            <div>
+              <label htmlFor="description">Description:</label>
+              <input
+                type="text"
+                name="description"
+                value={fields.description}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </div>
+            <div>
+              <label htmlFor="price">Price:</label>
+              <input
+                type="number"
+                name="price"
+                value={fields.price}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </div>
+            <button type="submit">Create Service</button>
+          </form>
         </div>
-        <div>
-          <label htmlFor="image">Image:</label>
-          <input
-            type="text"
-            name="image"
-            value={fields.image}
-            onChange={(e) => this.handleChange(e)}
-          />
-        </div>
-        <div>
-          <label htmlFor="duration">Duration:</label>
-          <input
-            type="number"
-            name="duration"
-            value={fields.duration}
-            onChange={(e) => this.handleChange(e)}
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description:</label>
-          <input
-            type="text"
-            name="description"
-            value={fields.description}
-            onChange={(e) => this.handleChange(e)}
-          />
-        </div>
-        <div>
-          <label htmlFor="price">Price:</label>
-          <input
-            type="number"
-            name="price"
-            value={fields.price}
-            onChange={(e) => this.handleChange(e)}
-          />
-        </div>
-        <button type="submit">Create Service</button>
-      </form>
+      </div>
     );
   }
 }

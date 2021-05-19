@@ -3,6 +3,7 @@ import { withAuth } from "../../../context/auth.context";
 import { withWorker } from "../../../context/worker.context";
 import WorkerItem from "../WorkerItem/WorkerItem";
 import workerService from "../../../services/worker.service";
+import AdminNavbar from "../../../components/General/Navbar/AdminNavbar";
 
 class WorkerList extends Component {
   constructor(props) {
@@ -13,17 +14,20 @@ class WorkerList extends Component {
     this.workerService = new workerService();
   }
 
- deleteWorker = async (workerId) => {
-  await this.props.deleteWorker(workerId)
- }
-  
+  deleteWorker = async (workerId) => {
+    await this.props.deleteWorker(workerId);
+  };
+
   displayWorkers() {
     if (this.props.workerList) {
       return this.props.workerList.map((worker) => {
         return (
-
           <div>
-            <WorkerItem key={worker._id} {...worker} deleteWorker={this.deleteWorker} />
+            <WorkerItem
+              key={worker._id}
+              {...worker}
+              deleteWorker={this.deleteWorker}
+            />
           </div>
         );
       });
@@ -33,7 +37,12 @@ class WorkerList extends Component {
   }
 
   render() {
-    return <div>{this.displayWorkers()}</div>;
+    return (
+      <div>
+        <AdminNavbar />
+        <div>{this.displayWorkers()}</div>
+      </div>
+    );
   }
 }
 

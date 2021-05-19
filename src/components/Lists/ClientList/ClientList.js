@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { withAuth } from "../../../context/auth.context";
 import { withUser } from "../../../context/user.context";
 import ClientItem from "../ClientItem/ClientItem";
-import { Link } from 'react-router-dom';
+import AdminNavbar from "../../../components/General/Navbar/AdminNavbar"
+
 
 class ClientList extends Component {
   constructor(props) {
@@ -31,7 +32,14 @@ class ClientList extends Component {
   }
   
   render() {
-    return <div>{this.displayClients()}</div>;
+    return (
+      <div>
+       <AdminNavbar />
+        <div>{this.displayClients()}</div>;
+      </div>
+
+    )
+    
   }
 }
 

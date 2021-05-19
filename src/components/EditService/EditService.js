@@ -69,8 +69,6 @@ class EditService extends Component {
     const result = await this.serviceService.showServiceDetail(
       this.props.match.params.id
     );
-    console.log("Servicio result", result);
-  
     this.setState({
       ...this.state,
       fields: result.data,
@@ -78,7 +76,7 @@ class EditService extends Component {
   }
 
  async handleSubmit(event) {
-    console.log("DATA", this.state.fields);
+    event.preventDefault();
     await this.props.editService(this.props.match.params.id, this.state.fields);
     await this.props.history.push("/");
   }
