@@ -29,6 +29,7 @@ class ReserveProvider extends React.Component {
 
     createReserve = async (data) => {
       try {
+          console.log("data reserve context", data)
         const response = await this.reserveService.createReserve(data);
         console.log("response", response)
         if(response) {

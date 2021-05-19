@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './Login.css';
 import { withAuth } from '../../context/auth.context';
 import { withUser } from '../../context/user.context';
 
@@ -23,18 +24,23 @@ class Login extends Component {
     const { email, password } = this.state;
 
     return (
-      <div>
-        <h1>Login</h1>
+      <div className="login-clean">
 
-        <form onSubmit={this.handleFormSubmit}>
+      <form method="post" onSubmit={this.handleFormSubmit}>
 
-          <label>Email:</label>
-          <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" name="email" value={email} onChange={this.handleChange}/>
+          <h2 className="sr-only">Bienvenido</h2>
 
-          <label>Password:</label>
-          <input className="form-control" id="floatingPassword" placeholder="Password" type="password" name="password" value={password} onChange={this.handleChange} />
+          <div className="form-group">
+          <input className="form-control" type="email" id="floatingInput" placeholder="name@example.com" name="email" value={email} onChange={this.handleChange}/>
+          </div>
 
-          <button className="w-100 btn btn-lg btn-primary" type="submit" value="Login">Login</button>
+          <div className="form-group">
+          <input className="form-control" type="password" id="floatingPassword" placeholder="Password" name="password" value={password} onChange={this.handleChange} />
+          </div>
+
+          <div className="form-group">
+          <button className="btn btn-block btn-primary" type="submit" value="Login">Login</button>
+          </div>
         </form>
       </div>
     );
