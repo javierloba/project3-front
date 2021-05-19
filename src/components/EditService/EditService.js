@@ -3,6 +3,8 @@ import { withRouter } from "react-router";
 import { withAuth } from "../../context/auth.context";
 import { withService } from "../../context/service.context";
 import serviceService from "../../services/service.service";
+import AdminNavbar from "../../components/General/Navbar/AdminNavbar";
+
 
 const validators = {
   name: (value) => {
@@ -98,6 +100,9 @@ class EditService extends Component {
   render() {
     const { fields } = this.state;
     return (
+      <div>
+      <AdminNavbar />
+        <div>
       <form onSubmit={(e) => this.handleSubmit(e)}>
         <div>
           <label htmlFor="name">Service name:</label>
@@ -146,6 +151,8 @@ class EditService extends Component {
         </div>
         <button type="submit">Edit Service</button>
       </form>
+        </div>
+      </div>
     );
   }
 }

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router"
 import { withAuth } from "../../../context/auth.context";
-import authService from "../../../services/auth.service";
 
 class AdminNavbar extends Component {
   constructor(props) {
     super(props);
-    this.authService = new authService();
     this.handleBack = this.handleBack.bind(this)
   }
 
@@ -17,6 +16,11 @@ class AdminNavbar extends Component {
   handleBack = () => {
     this.props.history.goBack();
   };
+
+  handleForward = () => {
+    this.props.history.goForward();
+  };
+
   render() {
     const { user, logout, isLoggedin } = this.props;
     return (
@@ -25,10 +29,12 @@ class AdminNavbar extends Component {
           <h4>Home</h4>
         </Link>
         <button onClick={() => this.handleBack()}>Go back</button>
+        <button onClick={() => this.handleForward()}>Go Forward</button>
         <button onClick={() => this.handleLogout()}>Logout</button>
+        
       </nav>
     );
   }
 }
 
-export default withAuth(AdminNavbar);
+export default withAuth(withRouter(AdminNavbar));
