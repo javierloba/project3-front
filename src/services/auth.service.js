@@ -12,7 +12,7 @@ class AuthService {
   createWorker = (data) => this.instance.post("/createWorker", data);
   isLoggedIn = () => this.instance.get("/loggedin");
   login = (data) => this.instance.post("/login", data);
-  logout = () => this.instance.get("/logout");
+  logout = () => this.instance.post("/logout");
   deleteWorker = (id) => this.instance.delete(`/deleteWorker/${id}`);
   
 }
