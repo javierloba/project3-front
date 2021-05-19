@@ -3,7 +3,7 @@ import axios from "axios";
 class ReserveService {
     constructor() {
         this.instance = axios.create({
-            baseURL: process.env.REACT_APP_API_URL,
+            baseURL: `${process.env.REACT_APP_API_URL}/reserve`,
         withCredentials: true,
         });
     }
