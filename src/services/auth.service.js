@@ -14,7 +14,7 @@ class AuthService {
   login = (data) => this.instance.post("/login", data);
   logout = () => this.instance.get("/logout");
   deleteWorker = (id) => this.instance.delete(`/deleteWorker/${id}`);
-  deleteUser = (id) => this.instance.delete(`/deleteClient/${id}`);
+  
 }
 
 export default AuthService;

@@ -12,12 +12,16 @@ class ClientList extends Component {
     };
   }
 
+  deleteUser = async (userId) => {
+    await this.props.deleteUser(userId)
+  }
+
   displayClients() {
     if (this.props.userList) {
       return this.props.userList.map((user) => {
         return (
           <div>
-            <ClientItem key={user.id} {...user} />
+            <ClientItem key={user.id} {...user} deleteUser={this.deleteUser}/>
           </div>
         );
       });

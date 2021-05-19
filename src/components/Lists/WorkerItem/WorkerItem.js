@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom';
 
 function WorkerItem({_id, name, surname, email, phone_number, deleteWorker}) {
 
-
-
     return (
         <div className="list-group">
             <div className="d-flex w-100 justify-content-between">

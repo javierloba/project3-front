@@ -63,9 +63,10 @@ class UserProvider extends React.Component {
 
     deleteUser = async (id) => {
         try {
-            const response = await this.userService.deleteUser(id);
+            const deleteUser = await this.userService.deleteUser(id);
+            const response = await this.userService.showUsers();
             if(response) {
-                this.setState({...this.state, user: response.data})
+                this.setState({...this.state, user: response.id})
             }
         } catch (error) {
             console.error(error)
@@ -74,7 +75,6 @@ class UserProvider extends React.Component {
 
     render() {
         const { userDetail, userList } = this.state;
-
         return(
         <Provider value={{ userDetail, userList, showUsers: this.showUsers, showUserDetail: this.showUserDetail, editUser: this.editUser, deleteUser: this.deleteUser }}  >
             {this.props.children}

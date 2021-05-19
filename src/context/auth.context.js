@@ -30,7 +30,7 @@ class AuthProvider extends React.Component {
     try {
       const response = await this.authService.createWorker(data);
       if(response){
-        this.setState({ isLoggedIn: true, user: response.data})
+        this.setState({ isLoggedIn: true})
       }
     } catch (err) {
       this.setState({ isLoggedIn: false, user: null})

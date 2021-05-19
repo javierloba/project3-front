@@ -3,7 +3,6 @@ import { withAuth } from "../../../context/auth.context";
 import { withWorker } from "../../../context/worker.context";
 import WorkerItem from "../WorkerItem/WorkerItem";
 import workerService from "../../../services/worker.service";
-import { Link } from 'react-router-dom';
 
 class WorkerList extends Component {
   constructor(props) {
@@ -15,11 +14,9 @@ class WorkerList extends Component {
   }
 
  deleteWorker = async (workerId) => {
-   console.log(workerId)
   await this.props.deleteWorker(workerId)
  }
   
-
   displayWorkers() {
     if (this.props.workerList) {
       return this.props.workerList.map((worker) => {

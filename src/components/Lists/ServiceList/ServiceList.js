@@ -10,7 +10,9 @@ class ServiceList extends Component {
     this.state = {
       services: [],
     };
+    
   }
+
 
   displayServices() {
     if (this.props.serviceList) {

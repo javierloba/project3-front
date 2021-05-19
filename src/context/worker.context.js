@@ -59,12 +59,12 @@ class WorkerProvider extends React.Component {
         }
     }
 
-    deleteWorker = async (data) => {
+    deleteWorker = async (id) => {
         try {
-            const deletedUser = await this.workerService.deleteWorker(data);
+            const celeteWorker = await this.workerService.deleteWorker(id);
             const response = await this.workerService.showWorkers();
             if(response) {
-                this.setState({...this.state, user: response.data})
+                this.setState({...this.state, user: response.id})
             }
         } catch (error) {
             console.error(error)
@@ -73,7 +73,6 @@ class WorkerProvider extends React.Component {
 
     render() {
         const { workerDetail, workerList } = this.state;
-
         return(
         <Provider value={{ workerDetail, workerList, showWorkers: this.showWorkers, showWorkerDetail: this.showWorkerDetail, editWorker: this.editWorker, deleteWorker: this.deleteWorker }}  >
             {this.props.children}
