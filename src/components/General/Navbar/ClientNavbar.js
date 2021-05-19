@@ -1,11 +1,27 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { withAuth } from "../../../context/auth.context";
+import { Link } from "react-router-dom"
 
-export default class ClientNavbar extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+class ClientNavbar extends Component {
+  handleLogout = () => {
+    this.props.logout();
+  };
+
+  handleBack = () => {
+    this.props.history.goBack();
+  };
+  render() {
+    const { user, logout, isLoggedin } = this.props;
+    return (
+      <nav className="navbar">
+        <Link to={"/"} id="home-btn">
+          <h4>Home</h4>
+        </Link>
+        <button onClick={() => this.handleBack()}>Go back</button>
+        <button onClick={() => this.handleLogout()}>Logout</button>
+      </nav>
+    );
+  }
 }
+
+export default withAuth(ClientNavbar);
