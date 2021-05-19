@@ -4,7 +4,6 @@ import { withReserve } from "../../../context/reserve.context";
 import ReserveItem from "../ReserveItem/ReserveItem";
 import { Link } from "react-router-dom";
 import AdminNavbar from "../../../components/General/Navbar/AdminNavbar";
-import WebCalendar from "../../../components/General/WebCalendar/WebCalendar";
 
 class ReserveList extends Component {
   constructor(props) {
@@ -41,7 +40,6 @@ class ReserveList extends Component {
       <div>
         <AdminNavbar />
         <div>
-          <WebCalendar />
           <Link to="/home/admin/crearReserva">Crear Reserva</Link>
           {this.displayReserve()}
         </div>

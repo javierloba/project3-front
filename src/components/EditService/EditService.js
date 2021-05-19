@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './EditService.css'
 import { withRouter } from "react-router";
 import { withAuth } from "../../context/auth.context";
 import { withService } from "../../context/service.context";
@@ -102,54 +103,51 @@ class EditService extends Component {
     return (
       <div>
       <AdminNavbar />
-        <div>
+        <div className="login-clean">
       <form onSubmit={(e) => this.handleSubmit(e)}>
-        <div>
-          <label htmlFor="name">Service name:</label>
+        <div className="form-group">
+          <label htmlFor="name">Nombre del servicio:</label>
           <input
+            className="form-control"
             type="text"
             name="name"
             value={fields.name}
             onChange={(e) => this.handleChange(e)}
           />
         </div>
-        <div>
-          <label htmlFor="image">Image:</label>
+        <div className="form-group">
+          <label htmlFor="duration">Duración (en min):</label>
           <input
-            type="text"
-            name="image"
-            value={fields.image}
-            onChange={(e) => this.handleChange(e)}
-          />
-        </div>
-        <div>
-          <label htmlFor="duration">Duration:</label>
-          <input
+            className="form-control"
             type="number"
             name="duration"
             value={fields.duration}
             onChange={(e) => this.handleChange(e)}
           />
         </div>
-        <div>
-          <label htmlFor="description">Description:</label>
+        <div className="form-group">
+          <label htmlFor="description">Descripción:</label>
           <input
+            className="form-control"
             type="text"
             name="description"
             value={fields.description}
             onChange={(e) => this.handleChange(e)}
           />
         </div>
-        <div>
-          <label htmlFor="price">Price:</label>
+        <div className="form-group">
+          <label htmlFor="price">Precio (en €):</label>
           <input
+            className="form-control"
             type="number"
             name="price"
             value={fields.price}
             onChange={(e) => this.handleChange(e)}
           />
         </div>
-        <button type="submit">Edit Service</button>
+        <div>
+          <button className="btn btn-block btn-primary" type="submit">Actualizar</button>
+        </div>
       </form>
         </div>
       </div>

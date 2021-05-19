@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './CreateWorker.css'
 import { withAuth } from "../../context/auth.context";
 import { withWorker } from "../../context/worker.context";
 import { withRouter } from "react-router";
@@ -101,64 +102,70 @@ class CreateWorker extends Component {
     return (
       <div>
         <AdminNavbar />
-        <div>
+        <div className="login-clean">
           <form onSubmit={(e) => this.handleSubmit(e)}>
-            <div>
-              <label htmlFor="name">Name:</label>
+            <div className="form-group">
+              <label htmlFor="name">Nombre:</label>
               <input
+                className="form-control"
                 type="text"
                 name="name"
                 value={fields.name}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="surname">Surname:</label>
+            <div className="form-group">
+              <label htmlFor="surname">Apellido:</label>
               <input
+                className="form-control"
                 type="text"
                 name="surname"
                 value={fields.surname}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="email">Email:</label>
+            <div className="form-group">
+              <label htmlFor="email">Correo electrónico:</label>
               <input
+                className="form-control"
                 type="text"
                 name="email"
                 value={fields.email}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="password">Password:</label>
+            <div className="form-group">
+              <label htmlFor="password">Contraseña:</label>
               <input
+                className="form-control"
                 type="password"
                 name="password"
                 value={fields.password}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="role">Role:</label>
+            <div className="form-group">
+              <label htmlFor="role">Rol (worker/admin):</label>
               <input
+                className="form-control"
                 type="text"
                 name="role"
                 value={fields.role}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="phone_number">Phone number:</label>
+            <div className="form-group">
+              <label htmlFor="phone_number">Teléfono:</label>
               <input
+                className="form-control"
                 type="text"
                 name="phone_number"
                 value={fields.phone_number}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <button type="submit" value="createWorker">
-              Create Worker
+            <button className="btn btn-block btn-primary" type="submit" value="createWorker">
+              Crear empleado
             </button>
           </form>
         </div>

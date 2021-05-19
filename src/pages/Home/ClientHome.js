@@ -13,7 +13,9 @@ function ClientHome() {
   return (
     <div>
       <ClientNavbar />
-      <HomeUserAccordion />
+      <div className="App">
+        <HomeUserAccordion />
+      </div>
     </div>
   );
 }

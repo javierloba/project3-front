@@ -1,0 +1,17 @@
+.activities-cards {
+    box-shadow:1px 1px 5px rgba(0,0,0,0.1);
+}
+
+.card {
+    border: none;
+}
+
+.accordion-body ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+
+.accordion-body ul li a{
+    text-decoration: none;
+    color: black;
+}

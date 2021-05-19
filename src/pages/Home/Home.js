@@ -13,7 +13,7 @@ function Home(props) {
   let role = props.user.role;
 
   return (
-    <div className="App">
+    <div>
       {user ? <ClientHome /> : null}
       {role === "Admin" ? (
         <AdminHome />

@@ -1,0 +1,17 @@
+.login-clean form .forgot {
+    display:block;
+    text-align:center;
+    font-size:12px;
+    color:#6f7a85;
+    opacity:0.9;
+    text-decoration:none;
+}
+
+.login-clean form .forgot:hover, .login-clean form .forgot:active {
+    opacity:1;
+    text-decoration:none;
+}
+
+.form-group {
+    margin-top: 10px;
+}
