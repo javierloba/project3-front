@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { withAuth } from "../../../context/auth.context";
 import { withService } from "../../../context/service.context";
 
+import ReserveDate from '../../General/WebCalendar/ReserveDate';
+
 function ServiceItem({
   name,
   image,
@@ -29,13 +31,7 @@ function ServiceItem({
         {user ? (
           <div>
             <small>
-              <Link
-                to="/home/reserve/reservas"
-                className="btn btn-primary btn-sm"
-                role="button"
-              >
-                Reservar
-              </Link>
+                <ReserveDate worker_id={props.worker_id}/>
             </small>
           </div>
         ) : null}
