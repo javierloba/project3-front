@@ -172,16 +172,6 @@ class CreateClient extends Component {
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            {/*<div className="form-group">
-              <label htmlFor="client_antiquity">Antigüedad:</label>
-              <input
-                className="form-control"
-                type="text"
-                name="client_antiquity"
-                value={fields.client_antiquity}
-                onChange={(e) => this.handleChange(e)}
-              />
-    </div> */}
             <button className="btn btn-block btn-primary" type="submit" value="createUser">
               Crear cliente
             </button>
