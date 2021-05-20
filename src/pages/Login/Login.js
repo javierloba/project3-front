@@ -27,7 +27,7 @@ class Login extends Component {
       <div className="login-clean">
 
       <form method="post" onSubmit={this.handleFormSubmit}>
-          <div class="illustration"><i class="fas fa-rocket"></i></div>
+          <div className="illustration"><i className="fas fa-rocket"></i></div>
 
           <div className="form-group">
           <input className="form-control" type="email" id="floatingInput" placeholder="name@example.com" name="email" value={email} onChange={this.handleChange}/>

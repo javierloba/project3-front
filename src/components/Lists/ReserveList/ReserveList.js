@@ -22,7 +22,7 @@ class ReserveList extends Component {
     if (this.props.reserveList) {
       return this.props.reserveList.map((reserve) => {
         return (
-          <div>
+          <div className="reserve-list">
             <ReserveItem
               key={reserve.id}
               {...reserve}
@@ -41,9 +41,6 @@ class ReserveList extends Component {
       <div>
         <AdminNavbar />
         <div>
-          <div className="btn-reserve">
-            <Link to="/home/admin/crearReserva" className="btn btn-block btn-primary">Crear Reserva</Link>
-          </div>
           {this.displayReserve()}
         </div>
       </div>

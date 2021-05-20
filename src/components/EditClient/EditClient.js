@@ -100,7 +100,7 @@ class EditClient extends Component {
     return (
       <div>
       <AdminNavbar />
-        <div className="login-clean">
+        <div className="login-clean-editClient">
           <form onSubmit={(e) => this.handleSubmit(e)}>
             <div className="form-group">
               <label htmlFor="password">Nueva contraseña:</label>

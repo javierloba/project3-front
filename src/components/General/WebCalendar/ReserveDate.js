@@ -25,7 +25,8 @@ function ReserveDate(props) {
 
     const handleSubmit = async(event) => {
         event.preventDefault();
-        const data = { reservation_date: startDate, worker_id: props.worker_id[0], user_id: props.user.id}
+        console.log("props name linea 28", props.serviceName)
+        const data = { reservation_date: startDate, worker_id: props.worker_id[0], service_name: props.serviceName, user_id: props.user.id}
         console.log("HandleSubmit de createReserve")
         console.log(data)
         await props.createReserve(data);

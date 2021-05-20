@@ -1,10 +1,10 @@
-.login-clean-editClient {
+.login-clean-editReseve {
     background:#f1f7fc;
     padding:5vh 0;
     height: 100vh;
 }
 
-.login-clean-editClient form {
+.login-clean-editReseve form {
     max-width:320px;
     width:90%;
     margin:0 auto;
@@ -15,7 +15,7 @@
     box-shadow:1px 1px 5px rgba(0,0,0,0.1);
 }
 
-.login-clean-editClient form .form-control {
+.login-clean-editReseve form .form-control {
     background:#f7f9fc;
     border:none;
     border-bottom:1px solid #dfe7f1;
@@ -27,7 +27,7 @@
     height:42px;
 }
 
-.login-clean-editClient form .btn-primary {
+.login-clean-editReseve form .btn-primary {
     display: block;
     width: 100%;
     background:#f4476b;
@@ -40,15 +40,15 @@
     outline:none !important;
 }
 
-.login-clean-editClient form .btn-primary:hover, .login-clean-editClient form .btn-primary:active {
+.login-clean-editReseve form .btn-primary:hover, .login-clean-editReseve form .btn-primary:active {
     background:#eb3b60;
 }
 
-.login-clean-editClient form .btn-primary:active {
+.login-clean-editReseve form .btn-primary:active {
     transform:translateY(1px);
 }
 
-.login-clean-editClient form .forgot {
+.login-clean-editReseve form .forgot {
     display:block;
     text-align:center;
     font-size:12px;
@@ -57,7 +57,7 @@
     text-decoration:none;
 }
 
-.login-clean-editClient form .forgot:hover, .login-clean-editClient form .forgot:active {
+.login-clean-editReseve form .forgot:hover, .login-clean-editReseve form .forgot:active {
     opacity:1;
     text-decoration:none;
 }

@@ -31,19 +31,19 @@ class App extends Component {
     return (
     <Switch>
           <PrivateRoute exact path="/" component_login={Login} component_user={Home}/>
-          <PrivateRoute exact path="/home/admin/listaServicios" component_user={ServiceList} />
-          <PrivateRoute exact path="/home/admin/listaClientes" component_user={ClientList} />
-          <PrivateRoute exact path="/home/admin/listaTrabajadores" component_user={WorkerList} />
-          <PrivateRoute exact path="/home/admin/listaReservas" component_user={ReserveList} />
-          <PrivateRoute exact path="/home/admin/crearReserva" component_user={CreateReserve} />
-          <PrivateRoute exact path="/home/admin/crearCliente" component_user={CreateClient}/>
-          <PrivateRoute exact path="/home/admin/crearTrabajador" component_user={CreateWorker}/>
-          <PrivateRoute exact path="/home/admin/crearServicio" component_user={createService}/>
-          <PrivateRoute exact path="/home/user/editarCliente/:id" component_user={EditClient}/>
-          <PrivateRoute exact path="/home/worker/editarTrabajador/:id" component_user={EditWorker}/>
-          <PrivateRoute exact path="/home/service/editarServicio/:id" component_user={EditService} />
-          <PrivateRoute exact path="/home/reserve/editarReserva/:id" component_user={EditReserve} />
-          <PrivateRoute exact path="/home/reserve/reservas" component_user={ReserveClient} />
+          <PrivateRoute exact path="/home/admin/listaServicios" component_user={ServiceList} component_login={Login} />
+          <PrivateRoute exact path="/home/admin/listaClientes" component_user={ClientList} component_login={Login} />
+          <PrivateRoute exact path="/home/admin/listaTrabajadores" component_user={WorkerList} component_login={Login} />
+          <PrivateRoute exact path="/home/admin/listaReservas" component_user={ReserveList} component_login={Login} />
+          <PrivateRoute exact path="/home/admin/crearReserva" component_user={CreateReserve} component_login={Login} />
+          <PrivateRoute exact path="/home/admin/crearCliente" component_user={CreateClient} component_login={Login} />
+          <PrivateRoute exact path="/home/admin/crearTrabajador" component_user={CreateWorker} component_login={Login} />
+          <PrivateRoute exact path="/home/admin/crearServicio" component_user={createService} component_login={Login} />
+          <PrivateRoute exact path="/home/user/editarCliente/:id" component_user={EditClient} component_login={Login} />
+          <PrivateRoute exact path="/home/worker/editarTrabajador/:id" component_user={EditWorker} component_login={Login} />
+          <PrivateRoute exact path="/home/service/editarServicio/:id" component_user={EditService} component_login={Login} />
+          <PrivateRoute exact path="/home/reserve/editarReserva/:id" component_user={EditReserve} component_login={Login} />
+          <PrivateRoute exact path="/home/reserve/reservas" component_user={ReserveClient} component_login={Login} />
         </Switch>
     );
   }

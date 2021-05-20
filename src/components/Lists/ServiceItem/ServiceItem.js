@@ -32,7 +32,7 @@ function ServiceItem({
         {user ? (
           <div>
             <small>
-                <ReserveDate worker_id={props.worker_id}/>
+                <ReserveDate worker_id={props.worker_id} serviceName={name}/>
             </small>
           </div>
         ) : null}
