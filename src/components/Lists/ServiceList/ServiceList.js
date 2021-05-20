@@ -41,7 +41,7 @@ class ServiceList extends Component {
     return (
       <div>
       {this.role === "Admin" ? <AdminNavbar/> : null}
-        <div>{this.displayServices()}</div>
+        <div className="App">{this.displayServices()}</div>
       </div>
     );
   }

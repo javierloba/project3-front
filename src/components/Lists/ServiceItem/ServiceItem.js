@@ -1,4 +1,5 @@
 import React from "react";
+import './ServiceItem.css';
 import { Link } from "react-router-dom";
 import { withAuth } from "../../../context/auth.context";
 import { withService } from "../../../context/service.context";
@@ -36,7 +37,7 @@ function ServiceItem({
           </div>
         ) : null}
         {role ? (
-          <div>
+          <div className="btn-list">
             <small>
               <Link
                 to={`/home/service/editarServicio/${_id}`}
@@ -48,13 +49,15 @@ function ServiceItem({
             </small>
             <small>
               <small>
-                <button onClick={() => deleteService(_id)}>
-                  Borrar Servicio
+                <button className="btn btn-primary btn-sm" onClick={() => deleteService(_id)}>
+                  Borrar
                 </button>
               </small>
             </small>
           </div>
-        ) : null}
+        ) :
+        null
+        }
       </div>
     </div>
   );

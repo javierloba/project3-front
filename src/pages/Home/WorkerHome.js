@@ -7,6 +7,7 @@ import { withReserve } from '../../context/reserve.context';
 import { Link } from 'react-router-dom'
 
 function WorkerHome() {
+    // No implementada, pendiente en backlog
     return (
         <div>
         <h1>Home de currito</h1>

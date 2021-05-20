@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  background:#f1f7fc;
 }
 
 .App {
@@ -9,8 +10,8 @@ html, body {
 
 nav.navbar { 
   display: flex;
-  padding: 0px 20px;
-  background: #686de0; 
+  padding: 10px 20px;
+  background: #eb3b60; 
 }
 
 button.navbar-button {

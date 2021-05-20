@@ -1,4 +1,5 @@
 import React from "react";
+import './AdminHome.css';
 import HomeAdminAccordion from "../../components/General/Acordion/HomeAdminAccordion";
 import WebCalendar from "../../components/General/WebCalendar/WebCalendar";
 import AdminNavbar from "../../components/General/Navbar/AdminNavbar";
@@ -13,12 +14,13 @@ function AdminHome() {
   return (
     <div>
       <AdminNavbar />
-      <div>
+      <div className="App home-admin">
         <HomeAdminAccordion />
-        <WebCalendar />
-        <Link to="/home/admin/listaReservas" className="btn btn-primary" role="button">
-          Gestionar reservas
-        </Link>
+        <div className="">
+          <Link to="/home/admin/listaReservas" className="btn btn-block btn-primary" role="button">
+            Gestionar reservas
+          </Link>
+        </div>
       </div>
     </div>
   );

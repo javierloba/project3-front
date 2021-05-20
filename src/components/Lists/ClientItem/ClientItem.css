@@ -1,0 +1,26 @@
+.btn-list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-list .btn-primary {
+    width: 115px;
+    background:#f4476b;
+    border:none;
+    border-radius:4px;
+    padding: 11px;
+    box-shadow:none;
+    margin-top:26px;
+    text-shadow:none;
+    outline:none !important;
+}
+
+.list-group-client {
+    width: 85%;
+    margin: 41px auto;
+    background-color:#ffffff;
+    padding:40px;
+    border-radius:4px;
+    color:#505e6c;
+    box-shadow:1px 1px 5px rgba(0,0,0,0.1);
+}

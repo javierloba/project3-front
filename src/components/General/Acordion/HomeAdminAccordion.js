@@ -1,9 +1,10 @@
 import React from 'react';
+import './HomeAdminAccordion.css';
 import { Link } from 'react-router-dom';
 
 export default function Acordion() {
     return (
-        <div className='activities-cards'>
+        <div className="activities-cards">
             <div className="card">
                 <div className="card-body">
                     <div className="accordion accordion-flush" id="accordionFlushExample">
@@ -18,8 +19,8 @@ export default function Acordion() {
                             data-bs-parent="#accordionFlushExample">
                                 <div className="accordion-body">
                                     <ul>
-                                        <li><Link to="/home/admin/listaServicios">Lista</Link></li>
-                                        <li><Link to="/home/admin/crearServicio">Crear</Link></li>
+                                        <li><Link to="/home/admin/listaServicios">Lista de servicios</Link></li>
+                                        <li><Link to="/home/admin/crearServicio">Crear nuevo servicio</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -36,8 +37,8 @@ export default function Acordion() {
                             data-bs-parent="#accordionFlushExample">
                                 <div className="accordion-body">
                                     <ul>
-                                    <li><Link to="/home/admin/listaClientes">Lista</Link></li>
-                                    <li><Link to="/home/admin/crearCliente">Crear Cliente</Link></li>
+                                    <li><Link to="/home/admin/listaClientes">Lista de clientes</Link></li>
+                                    <li><Link to="/home/admin/crearCliente">Crear nuevo cliente</Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -54,8 +55,8 @@ export default function Acordion() {
                             data-bs-parent="#accordionFlushExample">
                                 <div className="accordion-body">
                                     <ul>
-                                    <li><Link to="/home/admin/listaTrabajadores">Lista</Link></li>
-                                    <li><Link to="/home/admin/crearTrabajador">Crear Trabajador</Link></li>
+                                    <li><Link to="/home/admin/listaTrabajadores">Lista de empleados</Link></li>
+                                    <li><Link to="/home/admin/crearTrabajador">Crear nuevo empleado</Link></li>
                                     </ul>
                                 </div>
                             </div>

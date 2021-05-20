@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './CreateClient.css';
 import { withAuth } from "../../context/auth.context";
 import { withUser } from "../../context/user.context";
 import { withRouter } from "react-router";
@@ -109,74 +110,80 @@ class CreateClient extends Component {
     return (
       <div>
         <AdminNavbar />
-        <div>
-          <h1>Create Client</h1>
+        <div className="login-clean">
           <form onSubmit={(e) => this.handleSubmit(e)}>
-            <div>
-              <label htmlFor="name">Name:</label>
+            <div className="form-group">
+              <label htmlFor="name">Nombre:</label>
               <input
+                className="form-control"
                 type="text"
                 name="name"
                 value={fields.name}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="surname">Surname:</label>
+            <div className="form-group">
+              <label htmlFor="surname">Apellido:</label>
               <input
+                className="form-control"
                 type="text"
                 name="surname"
                 value={fields.surname}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="email">Email:</label>
+            <div className="form-group">
+              <label htmlFor="email">Correo electrónico:</label>
               <input
+                className="form-control"
                 type="text"
                 name="email"
                 value={fields.email}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="password">Password:</label>
+            <div className="form-group">
+              <label htmlFor="password">Contraseña:</label>
               <input
+                className="form-control"
                 type="password"
                 name="password"
                 value={fields.password}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="birthday">Birthday:</label>
+            <div className="form-group">
+              <label htmlFor="birthday">Fecha de nacimiento:</label>
               <input
+                className="form-control"
                 type="text"
                 name="birthday"
                 value={fields.birthday}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="phone_number">Phone number:</label>
+            <div className="form-group">
+              <label htmlFor="phone_number">Teléfono:</label>
               <input
+                className="form-control"
                 type="text"
                 name="phone_number"
                 value={fields.phone_number}
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <div>
-              <label htmlFor="client_antiquity">Client antiquity:</label>
+            {/*<div className="form-group">
+              <label htmlFor="client_antiquity">Antigüedad:</label>
               <input
+                className="form-control"
                 type="text"
                 name="client_antiquity"
                 value={fields.client_antiquity}
                 onChange={(e) => this.handleChange(e)}
               />
-            </div>
-            <button type="submit" value="createUser">
-              Create Client
+    </div> */}
+            <button className="btn btn-block btn-primary" type="submit" value="createUser">
+              Crear cliente
             </button>
           </form>
         </div>
