@@ -40,6 +40,12 @@ const validators = {
       message = "Price of service is required";
     }
   },
+  worker_id: (value) => {
+    let message;
+    if (!value) {
+      message = "Worker ID is required";
+    }
+  },
 };
 
 class CreateService extends Component {

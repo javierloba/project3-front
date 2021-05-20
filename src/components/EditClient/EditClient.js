@@ -25,6 +25,14 @@ const validators = {
 
     return message;
   },
+  birthday: (value) => {
+    let message;
+    if (!value) {
+      message = "Birthday is required";
+    }
+
+    return message;
+  },
   email: (value) => {
     let message;
     if (!value) {
@@ -125,11 +133,11 @@ class EditClient extends Component {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Fecha de nacimiento:</label>
+              <label htmlFor="birthday">Fecha de nacimiento:</label>
               <input
                 className="form-control"
                 type="text"
-                name="email"
+                name="birthday"
                 value={fields.birthday}
                 onChange={(e) => this.handleChange(e)}
               />

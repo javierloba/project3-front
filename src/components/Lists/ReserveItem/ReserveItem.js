@@ -19,7 +19,9 @@ function ReserveItem({_id, user_id, worker_id, reservation_date, status, service
             <small>{service_name}</small>
             <div className="btn-list">
                 <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Editar</Link></small>
-                <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Borrar</Link></small>
+                <small><button className="btn btn-primary btn-sm" onClick={() => deleteReserve(_id)}>
+                  Borrar
+                </button></small>
             </div>
         </div>
     )
