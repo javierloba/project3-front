@@ -1,11 +1,7 @@
 import React from 'react';
-<<<<<<< HEAD
-import ServiceList from '../../Lists/ServiceList/ServiceList';
-=======
 import './HomeUserAccordion.css';
 import ServiceList from '../../Lists/ServiceList/ServiceList';
 import ClientReserveList from '../../Lists/ClientReserveList/ClientReserveList';
->>>>>>> deca5cfb3ce5eb161ccfacc061238605e7bb7fef
 
 export default function Acordion() {
     return (
