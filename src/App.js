@@ -22,7 +22,7 @@ import EditClient from "./components/EditClient/EditClient";
 import EditWorker from "./components/editWorker/editWorker";
 import EditService from "./components/EditService/EditService";
 import EditReserve from "./components/EditReserve/EditReserve";
-import ReserveClient from "./pages/ReserveClient/ReserveClient";
+import ClientHome from "./pages/Home/ClientHome";
 
 class App extends Component {
   
@@ -43,7 +43,7 @@ class App extends Component {
           <PrivateRoute exact path="/home/worker/editarTrabajador/:id" component_user={EditWorker} component_login={Login} />
           <PrivateRoute exact path="/home/service/editarServicio/:id" component_user={EditService} component_login={Login} />
           <PrivateRoute exact path="/home/reserve/editarReserva/:id" component_user={EditReserve} component_login={Login} />
-          <PrivateRoute exact path="/home/reserve/reservas" component_user={ReserveClient} component_login={Login} />
+          <PrivateRoute exact path="/home/reserve/reservas" component_user={ClientHome} component_login={Login} />
         </Switch>
     );
   }

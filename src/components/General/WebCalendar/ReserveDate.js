@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { addMonths } from 'date-fns';
+import { withRouter } from 'react-router';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import { withAuth } from '../../../context/auth.context';
@@ -30,7 +31,7 @@ function ReserveDate(props) {
         console.log("HandleSubmit de createReserve")
         console.log(data)
         await props.createReserve(data);
-        // await props.history.push("/");
+        window.location.reload();
     }
 
     return (
@@ -50,6 +51,7 @@ function ReserveDate(props) {
             </div>
 
             <input
+            className="hidden"
             type="text"
             name="name"
             value={startDate ? startDate : ""}
@@ -60,4 +62,4 @@ function ReserveDate(props) {
     )
 }
 
-export default withAuth(withUser(withWorker(withService(withReserve(ReserveDate)))));
+export default withAuth(withUser(withWorker(withService(withReserve(withRouter(ReserveDate))))));
