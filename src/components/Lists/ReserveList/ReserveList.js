@@ -3,7 +3,6 @@ import './ReserveList.css';
 import { withAuth } from "../../../context/auth.context";
 import { withReserve } from "../../../context/reserve.context";
 import ReserveItem from "../ReserveItem/ReserveItem";
-import { Link } from "react-router-dom";
 import AdminNavbar from "../../../components/General/Navbar/AdminNavbar";
 
 class ReserveList extends Component {

@@ -66,6 +66,7 @@ class EditClient extends Component {
   }
 
   async componentDidMount() {
+    console.log("PROPS", this.props)
     const result = await this.userService.showUserDetail(
       this.props.match.params.id
     );

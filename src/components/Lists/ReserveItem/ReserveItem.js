@@ -6,7 +6,7 @@ import { withAuth } from '../../../context/auth.context';
 import { withReserve } from '../../../context/reserve.context';
 import { Link } from 'react-router-dom';
 
-function ReserveItem({_id, user_id, worker_id, reservation_date, status, service_id, service_name, assigned_worker, assigned_client}) {
+function ReserveItem({_id, user_id, deleteReserve, worker_id, reservation_date, status, service_id, service_name, assigned_worker, assigned_client}) {
 
     return (
 
