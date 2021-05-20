@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './ReserveList.css';
 import { withAuth } from "../../../context/auth.context";
 import { withReserve } from "../../../context/reserve.context";
 import ReserveItem from "../ReserveItem/ReserveItem";
@@ -40,7 +41,9 @@ class ReserveList extends Component {
       <div>
         <AdminNavbar />
         <div>
-          <Link to="/home/admin/crearReserva">Crear Reserva</Link>
+          <div className="btn-reserve">
+            <Link to="/home/admin/crearReserva" className="btn btn-block btn-primary">Crear Reserva</Link>
+          </div>
           {this.displayReserve()}
         </div>
       </div>

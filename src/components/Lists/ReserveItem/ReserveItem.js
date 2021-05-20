@@ -1,4 +1,5 @@
 import React from 'react';
+import './ReserveItem.css';
 import { withAuth } from '../../../context/auth.context';
 import { withReserve } from '../../../context/reserve.context';
 import { Link } from 'react-router-dom';
@@ -7,7 +8,7 @@ function ReserveItem({_id, user_id, worker_id, reservation_date, status, service
 
     return (
 
-        <div className="list-group">
+        <div className="list-group App">
             <div className="d-flex w-100 justify-content-between">
             <h5 className="mb-1">{user_id}</h5>
             </div>
@@ -16,8 +17,10 @@ function ReserveItem({_id, user_id, worker_id, reservation_date, status, service
             <small>{status}</small>
             <small>{service_id}</small>
             <small>{assigned_worker}</small>
-            <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Editar</Link></small>
-            <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Borrar</Link></small>
+            <div className="btn-list">
+                <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Editar</Link></small>
+                <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Borrar</Link></small>
+            </div>
         </div>
     )
 }

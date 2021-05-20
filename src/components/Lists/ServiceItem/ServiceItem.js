@@ -20,7 +20,7 @@ function ServiceItem({
   let role = props.user.role;
 
   return (
-    <div className="list-group App">
+    <div className="list-group-service">
       <div className="d-flex w-100 justify-content-between">
         <h5 className="mb-1">{name}</h5>
         <small>{price}€</small>

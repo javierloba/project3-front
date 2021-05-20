@@ -14,9 +14,9 @@ function AdminHome() {
   return (
     <div>
       <AdminNavbar />
-      <div className="App home-admin">
+      <div className="home-admin">
         <HomeAdminAccordion />
-        <div className="">
+        <div>
           <Link to="/home/admin/listaReservas" className="btn btn-block btn-primary" role="button">
             Gestionar reservas
           </Link>

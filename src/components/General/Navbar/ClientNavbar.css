@@ -1,0 +1,23 @@
+.navbar .illustration {
+    font-size: 40px;
+    color: white;
+}
+
+.navbar .btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background:#f4476b;
+    border:none;
+    border-radius:50%;
+    box-shadow:none;
+    margin-top:26px;
+    text-shadow:none;
+    outline:none !important;
+}
+
+.navbar .btn-primary:hover, .navbar .btn-primary:active {
+    background:#eb3b60;
+}

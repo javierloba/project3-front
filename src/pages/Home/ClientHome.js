@@ -1,4 +1,5 @@
 import React from "react";
+import './ClientHome.css'
 import { withAuth } from "../../context/auth.context";
 import { withUser } from "../../context/user.context";
 import { withWorker } from "../../context/worker.context";
@@ -13,7 +14,7 @@ function ClientHome() {
   return (
     <div>
       <ClientNavbar />
-      <div className="App">
+      <div className="client-home">
         <HomeUserAccordion />
       </div>
     </div>

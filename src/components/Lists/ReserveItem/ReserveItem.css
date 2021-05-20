@@ -15,8 +15,8 @@
     outline:none !important;
 }
 
-.list-group-service {
-    width: 95%;
+.list-group {
+    width: 85%;
     margin: 21px auto;
     background-color:#ffffff;
     padding:40px;
