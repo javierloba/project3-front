@@ -137,7 +137,16 @@ class CreateService extends Component {
                 onChange={(e) => this.handleChange(e)}
               />
             </div>
-            <button className="btn btn-block btn-primary" type="submit">Crear servicio</button>
+            <div>
+              <label htmlFor="price">Worker ID:</label>
+              <input
+                type="string"
+                name="worker_id"
+                value={fields.worker_id}
+                onChange={(e) => this.handleChange(e)}
+              />
+            </div>
+            <button type="submit">Crear Servicio</button>
           </form>
         </div>
       </div>

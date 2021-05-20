@@ -13,14 +13,14 @@ function Home(props) {
   let role = props.user.role;
 
   return (
-    <div>
+    <>
       {user ? <ClientHome /> : null}
       {role === "Admin" ? (
         <AdminHome />
       ) : role === "Worker" ? (
         <WorkerHome />
       ) : null}
-    </div>
+    </>
   );
 }
 
