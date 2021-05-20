@@ -15,13 +15,6 @@ const validators = {
     }
     return message;
   },
-  image: (value) => {
-    let message;
-    if (!value) {
-      message = "Image is required";
-    }
-    return message;
-  },
   description: (value) => {
     let message;
     if (!value) {
@@ -49,16 +42,14 @@ class EditService extends Component {
     super(props);
     this.state = {
       fields: {
-        name: "",
-        image: "",
+        name: "", 
         duration: "",
         description: "",
         price: "",
         worker_id: "",
       },
       errors: {
-        name: null,
-        image: null,
+        name: null, 
         duration: null,
         description: null,
         price: null,

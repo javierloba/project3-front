@@ -3,7 +3,7 @@ import { withAuth } from '../../../context/auth.context';
 import { withReserve } from '../../../context/reserve.context';
 import { Link } from 'react-router-dom';
 
-function ReserveItem({_id, user_id, worker_id, reservation_date, status, service_id, assigned_worker}) {
+function ReserveItem({_id, user_id, worker_id, reservation_date, status, service_id, assigned_worker, deleteReserve}) {
 
     return (
 
@@ -17,7 +17,9 @@ function ReserveItem({_id, user_id, worker_id, reservation_date, status, service
             <small>{service_id}</small>
             <small>{assigned_worker}</small>
             <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Editar</Link></small>
-            <small><Link to={`/home/reserve/editarReserva/${_id}`} className="btn btn-primary btn-sm" role="button">Borrar</Link></small>
+            <small><button className="btn btn-primary btn-sm" onClick={() => deleteReserve(_id)}>
+                  Borrar
+                </button></small>
         </div>
     )
 }
