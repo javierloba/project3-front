@@ -9,9 +9,17 @@ class WorkerList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      workers: [],
+      workerList: [],
     };
     this.workerService = new workerService();
+  }
+
+  async componentDidMount() {
+    const result = await this.workerService.showWorkers();
+            if (result) {
+                this.setState({workerList: result.data})
+            }
+    this.forceUpdate()
   }
 
   deleteWorker = async (workerId) => {
@@ -19,8 +27,8 @@ class WorkerList extends Component {
   };
 
   displayWorkers() {
-    if (this.props.workerList) {
-      return this.props.workerList.map((worker) => {
+    if (this.state.workerList) {
+      return this.state.workerList.map((worker) => {
         return (
           <div>
             <WorkerItem
