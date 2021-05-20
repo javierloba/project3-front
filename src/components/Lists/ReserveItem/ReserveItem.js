@@ -10,7 +10,7 @@ function ReserveItem({_id, user_id, deleteReserve, worker_id, reservation_date, 
 
     return (
 
-        <div className="list-group App">
+        <div className="list-group-one App">
             <div className="d-flex w-100 justify-content-between">
             {assigned_client && <h5 className="mb-1">{assigned_client.name}</h5>}
             </div>
