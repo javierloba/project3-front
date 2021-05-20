@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ServiceList from '../../Lists/ServiceList/ServiceList'
+import './HomeUserAccordion.css';
+import ServiceList from '../../Lists/ServiceList/ServiceList';
+import ClientReserveList from '../../Lists/ClientReserveList/ClientReserveList';
 
 export default function Acordion() {
     return (
@@ -19,6 +20,21 @@ export default function Acordion() {
                             data-bs-parent="#accordionFlushExample">
                                 <div className="accordion-body">
                                         <ServiceList />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="accordion-item">
+                            <h3 className="accordion-header" id="flush-headingTwo">
+                                <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                Reservas
+                                </button>
+                            </h3>
+                            <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                            data-bs-parent="#accordionFlushExample">
+                                <div className="accordion-body">
+                                        <ClientReserveList />
                                 </div>
                             </div>
                         </div>
