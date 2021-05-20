@@ -14,14 +14,10 @@ class UserProvider extends React.Component {
     async componentDidMount(){
         try {
             const result = await this.userService.showUsers();
-            //const result2 = await this.userService.showUserDetail(id);
             if (result) {
                 console.log(result)
                 this.setState({userList: result.data})
-            } //else
-            // if (result2) {
-            //     this.setState({userDetail: result.data})
-            // }
+            } 
         } catch(err){
             this.setState({userList: null})
         }

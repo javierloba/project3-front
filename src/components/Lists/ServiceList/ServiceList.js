@@ -3,7 +3,6 @@ import { withAuth } from "../../../context/auth.context";
 import { withService } from "../../../context/service.context";
 import ServiceItem from "../ServiceItem/ServiceItem";
 import AdminNavbar from "../../../components/General/Navbar/AdminNavbar";
-import ClientNavbar from "../../../components/General/Navbar/ClientNavbar"
 
 class ServiceList extends Component {
   constructor(props) {

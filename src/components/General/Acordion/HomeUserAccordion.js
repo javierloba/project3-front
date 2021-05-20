@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ServiceList from '../../Lists/ServiceList/ServiceList'
+import ServiceList from '../../Lists/ServiceList/ServiceList';
 
 export default function Acordion() {
     return (
